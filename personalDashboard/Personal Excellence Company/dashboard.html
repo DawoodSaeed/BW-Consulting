@@ -491,7 +491,7 @@
             </form>
           </div>
 
-          <div class="navigation_btns">
+          <div class="navigation_btns btn-group">
             <button class="btn back">Back</button>
             <button class="btn">Save</button>
             <button class="btn nxt">Next</button>
@@ -677,10 +677,10 @@
             </form>
           </div>
 
-          <div class="navigation_btns">
+          <div class="navigation_btns btn-group">
             <button class="btn back">Back</button>
             <button class="btn">Save</button>
-            <button class="btn nxt">Next</button>
+            <!-- <button class="btn nxt">Next</button> -->
           </div>
         </div>
       </div>
@@ -752,7 +752,7 @@
 
         // All the buttons in the internal Menu
         const btns = document.querySelectorAll(
-          ".internalMenuOverlay .btn-group button"
+          ".internalMenuOverlay .d-flex.btn-group button"
         );
 
         const overviewSection = document.getElementById("overviewSection");
@@ -845,7 +845,7 @@
             btns[activeBtn].classList.remove("btn-primary");
             sectionActive.classList.remove("activeSection");
 
-            idx = ++activeBtn;
+            let idx = ++activeBtn;
             console.log(idx);
             sections[idx].classList.add("activeSection");
             btns[idx].classList.add("btn-primary");
@@ -856,6 +856,7 @@
 
         backBtns.forEach((backBtn) => {
           backBtn.addEventListener("click", function () {
+            console.log("Back btn clicked");
             // From the current;
             btns[activeBtn].classList.remove("btn-primary");
             sectionActive.classList.remove("activeSection");
@@ -863,7 +864,7 @@
             idx = --activeBtn;
             console.log(idx);
             sections[idx].classList.add("activeSection");
-            sections[idx].classList.add("btn-primary");
+            btns[idx].classList.add("btn-primary");
             sectionActive = sections[idx];
             activeBtn = idx;
           });
@@ -914,7 +915,7 @@
         });
       </script>
 
-      <script src="../../scripts/main.js"></script>
+      <!-- <script src="../../scripts/main.js"></script> -->
     </div>
   </body>
 </html>
