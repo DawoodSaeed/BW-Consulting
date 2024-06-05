@@ -1,0 +1,2008 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Excellence Dashboard</title>
+    <!-- CDN for remix icon -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Add icon library -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!-- Libk tot the css file -->
+    <link rel="stylesheet" href="../styles/candidatesearch.css" />
+
+    <link rel="stylesheet" href="../styles/main.css" />
+
+    <style>
+            .btn-primary {
+              width: max-content;
+              margin-right: 0px;
+            }
+
+            .w-50 {
+              width: calc(50% - 20px);
+            }
+
+            /* Media Query */
+
+      @media (max-width: 600px) {
+          .row {
+              flex-direction: column;
+          }
+
+          .form-control {
+              width: 100%;
+          }
+
+          .input-fields {
+              padding: 25px 20px;
+          }
+
+          .input-fields>div:first-of-type {
+              width: 100%;
+          }
+
+          .d-none {
+              display: none;
+          }
+      }
+
+      /* ########################### CHECKBOX ################## */
+      /* Hide the default checkbox input */
+      .custom-checkbox input[type="checkbox"] {
+          display: none;
+      }
+
+      /* Define the custom checkbox container */
+      .custom-checkbox {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+      }
+
+      /* Style the checkbox */
+      .custom-checkbox .checkmark {
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          background-color: #fff;
+          /* Default background color */
+          border: 1px solid #ccc;
+          margin-right: 10px;
+          cursor: pointer;
+          position: relative;
+      }
+
+      .page2 .checkmark {
+          flex: 0.1;
+      }
+
+      @media (min-width: 1400px) {
+          .page2 .checkmark {
+              flex: 0.07;
+          }
+      }
+
+      /* Change the background color when the checkbox is checked */
+      .custom-checkbox input[type="checkbox"]:checked+.checkmark {
+          background-color: #58a09a;
+          /* Color when checked */
+      }
+
+      /* Style the label text */
+      .custom-checkbox .label-text {
+          vertical-align: middle;
+      }
+
+      .page2 .label-text {
+          flex: 0.9;
+      }
+
+      /* Display the tick mark when the checkbox is checked */
+      .custom-checkbox input[type="checkbox"]:checked+.checkmark::before {
+          content: "\2713";
+          /* Unicode character for a checkmark */
+          display: inline-block;
+          /* Display the tick mark when checked */
+          color: #fff;
+          /* Color of the tick mark when checked */
+          font-size: 16px;
+          /* Adjust the size of the tick mark */
+          position: absolute;
+          top: 45%;
+          left: 45%;
+          transform: translate(-50%, -50%) rotate(15deg);
+          font: inherit;
+      }
+
+      /* ############################ RADIO BUTTONS ###################### */
+
+      /* Style for the custom radio button */
+      .custom-radio {
+          display: inline-block;
+          position: relative;
+          padding-left: 30px;
+          /* Adjust as needed for your design */
+          cursor: pointer;
+      }
+
+      /* Hide the default radio input */
+      .custom-radio input[type="radio"] {
+          display: none;
+      }
+
+      /* Style for the radio mark */
+      .custom-radio .radiomark {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 20px;
+          height: 20px;
+          background-color: #f2f2f2;
+          /* Default background color */
+          border: 1px solid #ccc;
+          border-radius: 50%;
+      }
+
+      /* Change the background color when the radio button is checked */
+      .custom-radio input[type="radio"]:checked+.radiomark {
+          background-color: #58a09a;
+          /* Color when checked */
+      }
+
+
+
+      .job_advertisement {
+          padding: 30px 6vw;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+          cursor: pointer;
+          gap: 30px;
+      }
+
+
+      .job_advertisement>div {
+          width: 30%;
+          min-width: 30%;
+          background-color: var(--bg-color);
+          padding: 50px 30px;
+          flex-grow: 1;
+          transition: all 0.4s ease-in;
+      }
+
+      @media (max-width:600px) {
+          .job_advertisement>div {
+              width: 100%;
+          }
+      }
+
+
+      .job_advertisement>div:hover {
+          transform: scale(1.03);
+      }
+
+
+      .job_advertisement .job_posting-row1 {
+          display: flex;
+          justify-content: space-between;
+      }
+
+
+      .job_posting-row1 p {
+          color: #294245;
+      }
+
+
+      .job_posting-row1 i {
+          font-size: 21px;
+          cursor: pointer;
+          transition: all 0.3s ease'
+
+      }
+
+      /* .job_posting-row1 i:hover {
+          font-weight: 600;
+      } */
+
+      .job_posting-row2 h2 {
+          font-size: 22px;
+          font-weight: 550;
+          margin-top: 25px;
+          color: #314E52;
+      }
+
+
+
+      .job_posting_row {
+          display: flex;
+          gap: 15px;
+          align-items: center;
+          margin-top: 25px;
+      }
+
+
+      .job_posting_row .small_text {
+          font-size: 14px;
+          font-weight: 500;
+          color: #294245;
+      }
+
+      .star_icon {
+          font-size: 25px;
+      }
+
+
+      .ri-star-fill:before {
+        content: "\f186";
+        color: var(--primary);
+      }
+
+      /* for the buttons; */
+      .btns-menu{
+        justify-content: center;
+      }
+      .btns-menu .btn{
+        width: max-content !important;
+        color: #000;
+        font-weight: 500;
+        padding: 10px 20px;
+        background: #ddd;
+        border: 0px;
+        text-transform: capitalize;
+      }
+
+      .btns-menu .btn.active{
+        background-color: #58a09a;
+        color: #fff;
+      }
+
+      .title{
+        font-size: 22px;
+        color: #6e6c6c;
+      }
+
+      .field .row{
+        gap: 20px !important;
+      }
+
+
+      .container{
+        height: auto !important;
+      }
+
+      @media screen and (max-width: 990px){
+        main{
+          padding:15px;
+        }
+
+
+        /* For the personal Details; */
+        #personalDetails .details > div:first-of-type{
+          flex: 0.6;
+        }
+
+        #personalDetails .details > div:nth-child(2){
+          flex: 0.4;
+        }
+
+        /* For the education details */
+        #educationDetails .d-flex{
+          justify-content: space-between;
+        }
+        #educationDetails .w-25{
+          width: 45%;
+          margin-top: 10px;;
+        }
+
+        /* avaliliblityDiv */
+        #avaliliblityDiv .w-33{
+          width: 45%;
+        }
+        #educationDiv .w-16{
+          width: 100% !important;
+        }
+
+        #educationDiv .input_mask .d-flex{
+          flex-wrap: wrap;
+        }
+
+
+        #professionalFocusDiv .d-flex{
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        #professionalFocusDiv .w-33{
+          width: 100%;
+        }
+
+
+        #industryExperienceDiv .d-flex{
+          flex-direction: column;
+        }
+        #industryExperienceDiv .w-50{
+          width: 100% !important;
+        }
+
+        #industryExperienceDiv .icon{
+          width: max-content;
+        }
+      }
+
+
+      /* For the mobile screen */
+      @media screen and (max-width: 880px){
+        .btns-menu{
+          flex-direction: row;
+          flex-wrap: wrap;
+        }
+
+
+        /* For the personal data */
+        #personalDetails .details {
+          flex-direction: column;
+        }
+
+        #educationDetails .w-25, #careerDetails .w-33,
+        #professionalFocusDetails .w-33,
+        #industryExperienceDetails .w-50,
+        #languageDetails .w-25
+        {
+          width: 100%;
+        }
+
+        #avaliliblityDiv .w-33{
+          width: 100%;
+        }
+
+        #educationDiv .menu{
+          display: flex;
+          flex-wrap: wrap;
+          width: 100%;
+          gap: 10px;
+        }
+
+        #educationDiv > .d-flex{
+            flex-direction: column;
+        }
+
+        .navigation_btns{
+          flex-direction: column !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-menu">
+      <div class="menu-top">
+        <!-- Logo, Title, about us, loations, de , search icon, login Btn -->
+        <div class="menu-top__left">
+          <div class="logoDiv">
+            <!-- <h1>CONSULTING</h1> -->
+            <img src="../images/logo.jpeg" alt="Logo Image" class="logoImage" />
+          </div>
+          <div class="d-none_small_screen ml-2">
+            <p class="pageTwo__title">
+              Personal Excellence
+              <span class="pageTwo__title-italic">Dashboard</span>
+            </p>
+            <p class="hover-title hover-title__pageTwo" style="opacity: 0">
+              Global
+            </p>
+          </div>
+        </div>
+
+        <div class="menu-top__right">
+          <div class="border-gray dropdown d-none_small_screen">
+            <p class="hover hover_removed">
+              <a>About Us <i class="fa-solid fa-caret-down icon-color"></i></a>
+            </p>
+
+            <div class="dropdown-options about_dropdown close">
+              <p class="hover hover_removed"><a href="">Unternehmen</a></p>
+              <p class="hover hover_removed">
+                <a href="">Ethik und Compilance</a>
+              </p>
+              <p class="hover hover_removed"><a href="">Menschenrechte</a></p>
+              <p class="hover hover_removed">
+                <a href="">Inclusion & Diversity</a>
+              </p>
+            </div>
+          </div>
+          <div class="border-gray d-none_small_screen">
+            <p class="hover hover_removed">
+              <a>Locations </a>
+            </p>
+            <!-- <span>Locations</span> -->
+          </div>
+          <div class="border-gray d-none_small_screen"><span>DE</span></div>
+          <div class="border-gray searchBtn">
+            <span><i class="fa-solid fa-magnifying-glass icon-color"></i></span>
+          </div>
+          <div class="btn-primary dropdown">
+            <span class="fontSize_smallScreen">
+              <i class="fa-solid fa-arrow-right-to-bracket"></i> Registration
+            </span>
+
+            <div class="dropdown-options menutwo_registration_dropdown close">
+              <a>Logout</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Search Bar -->
+
+      <div style="width: 100%; justify-content: center" class="searchRow close">
+        <div class="searchBox">
+          <input type="text" placeholder="Search" class="searchBoxInput" />
+
+          <i class="fa-solid fa-magnifying-glass searchBoxIcon"></i>
+        </div>
+      </div>
+
+      <!-- Small screen navbar toggler -->
+      <div class="menu-bottom_smallScreen mt-2">
+        <i class="fa-solid fa-bars"></i>
+        <div class="ml-1">
+          <p class="small_hover-title">Global</p>
+        </div>
+      </div>
+
+      <div class="menu-bottom">
+        <div class="menu-left">
+          <div class="dropdown">
+            <span class="hover"
+              ><a>My Account</a>
+              <i class="fa-solid fa-chevron-down icon-color"></i
+            ></span>
+
+            <div class="dropdown-options close" id="dashboard_opt1">
+              <div class="hover">
+                <a href="dashboard.html">Profil</a>
+              </div>
+              <div class="hover">
+                <a href="dashboard.html">Personal Data </a>
+              </div>
+              <div class="hover">
+                <a href="dashboard.html">Availability</a>
+              </div>
+              <div class="hover">
+                <a href="dashboard.html">Education</a>
+              </div>
+              <div class="hover">
+                <a href="dashboard.html">Career</a>
+              </div>
+              <div class="hover">
+                <a href="dashboard.html">Professional focus</a>
+              </div>
+              <div class="hover">
+                <a href="dashboard.html">Industry experiences</a>
+              </div>
+              <div class="hover">
+                <a href="dashboard.html">Languages and abroad </a>
+              </div>
+              <div class="hover">
+                <a href="dashboard.html">Upload documents </a>
+              </div>
+              <div class="hover">
+                <a href="dashboard.html">Privacy</a>
+              </div>
+              <div class="hover">
+                <a href="dashboard.html">Account</a>
+              </div>
+            </div>
+          </div>
+          <div class="dropdown">
+            <span class="hover"
+              ><a>Jobs</a> <i class="fa-solid fa-chevron-down icon-color"></i
+            ></span>
+
+            <div class="dropdown-options close">
+              <div class="hover">
+                <a href="#">Jobs Search</a>
+              </div>
+              <div class="hover">
+                <a href="#">Apllication Status</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="menu-right">
+          <div>
+            <i class="fa-solid fa-user icon-color"></i>
+            <span class="ml-1"><a href="">Contact</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main class="container">
+      <div
+        class="btns-menu d-flex row justify-content-centera align-items-center"
+      >
+        <button class="btn active">profile</button>
+        <button class="btn">Personal Data</button>
+        <button class="btn">Availability</button>
+        <button class="btn">Education</button>
+        <button class="btn">Career</button>
+        <button class="btn">Professional focus</button>
+        <button class="btn">Industry Experience</button>
+        <button class="btn">Language & Abroad</button>
+        <button class="btn">Document Upload</button>
+        <button class="btn">Privacy</button>
+        <button class="btn">Account</button>
+      </div>
+
+      <!-- Personal Data; -->
+      <div class="openner">
+        <p class="title mt-3">Profile - Overview</p>
+        <details class="detailsExpansion mt-3" id="personalDetails">
+          <summary>
+            <span>Personal Data</span>
+            <span class="edit-icon">&#9998;</span>
+          </summary>
+
+          <div class="details">
+            <div>
+              <div>
+                <p>Dr.</p>
+                <p>Mr</p>
+                <p>Alexander Reimold-Eisenhuth</p>
+                <p>Nettenbergstraße 29</p>
+                <p>79618 Rheinfelden</p>
+                <p>Germany</p>
+              </div>
+
+              <div>
+                <p><strong>Phone:</strong> +49 40 201 397 8</p>
+                <p><strong>Mobil:</strong> +49 (170) 9899770</p>
+                <p><strong>E-Mail I:</strong> a-malt@t-online.de</p>
+                <p>
+                  <strong>E-Mail II:</strong> info@uabzde-12.de
+                  Homepage:www.abzde.de
+                </p>
+              </div>
+
+              <div>
+                <p><strong>Date of birth:</strong> 29.07.1980 (Age:43)</p>
+              </div>
+
+              <div>
+                <p><strong>Email Signature</strong></p>
+              </div>
+            </div>
+
+            <div>
+              <img src="../images/background_image.jpg" alt="" class="w-50" />
+              <p>Change Image</p>
+              <p>Delete Image</p>
+              <p>Privacy Policy</p>
+            </div>
+          </div>
+        </details>
+
+        <details class="detailsExpansion mt-3">
+          <summary>
+            <span>Availability</span>
+            <span class="edit-icon">&#9998;</span>
+          </summary>
+          <div class="details">
+            <p>12. February 2023</p>
+          </div>
+        </details>
+
+        <details class="detailsExpansion mt-3" id="educationDetails">
+          <summary>
+            <span>Education</span>
+            <span class="edit-icon">&#9998;</span>
+          </summary>
+          <div class="details">
+            <h3 class="primary_color">Studies</h3>
+            <div class="d-flex row mt-3">
+              <div class="w-25">
+                <p>Date from – to</p>
+                <p class="text-muted mt-1">01.09.2020 – 30.09.2022</p>
+              </div>
+
+              <div class="w-25">
+                <p>Intitution (name of institution)</p>
+                <p class="text-muted mt-1">University Hamburg</p>
+              </div>
+
+              <div class="w-25">
+                <p>Education</p>
+                <p class="text-muted mt-1">Bachelor of Arts</p>
+              </div>
+
+              <div class="w-25">
+                <p>Spacialization</p>
+                <p class="text-muted mt-1">Oeconomic</p>
+              </div>
+            </div>
+
+            <!-- Row # 2  -->
+            <h3 class="primary_color mt-3">Training</h3>
+            <div class="d-flex row mt-3">
+              <div class="w-25">
+                <p>Date from – to</p>
+                <p class="text-muted mt-1">01.08.2010 – 30.08.2013</p>
+              </div>
+
+              <div class="w-25">
+                <p>Intitution (name of institution)</p>
+                <p class="text-muted mt-1">Hanover Vocational School</p>
+              </div>
+
+              <div class="w-25">
+                <p>Education</p>
+                <p class="text-muted mt-1">State Administrative Officer</p>
+              </div>
+
+              <div class="w-25">
+                <p>Spacialization</p>
+                <p class="text-muted mt-1">Trade</p>
+              </div>
+            </div>
+
+            <!-- Row # 3  -->
+            <h3 class="primary_color mt-3">School education</h3>
+            <div class="d-flex row mt-3">
+              <div class="w-25">
+                <p>Date from – to</p>
+                <p class="text-muted mt-1">01.09.2008 – 30.09.2010</p>
+              </div>
+
+              <div class="w-25">
+                <p>Intitution (name of institution)</p>
+                <p class="text-muted mt-1">Hamburg Comprehensive School</p>
+              </div>
+
+              <div class="w-25">
+                <p>Education</p>
+                <p class="text-muted mt-1">High school graduation</p>
+              </div>
+
+              <div class="w-25">
+                <p>Spacialization</p>
+                <p class="text-muted mt-1">Languages</p>
+              </div>
+            </div>
+
+            <div class="mt-3">
+              <p class="primary_color">Further education</p>
+              <p class="primary_color">Continuing education</p>
+              <p class="primary_color">Seminar</p>
+              <p class="primary_color">Certification</p>
+              <p class="primary_color">Intership</p>
+            </div>
+          </div>
+        </details>
+
+        <details class="detailsExpansion mt-3" id="careerDetails">
+          <summary>
+            <span>Career </span>
+            <span class="edit-icon">&#9998;</span>
+          </summary>
+          <div class="details">
+            <div class="d-flex row mt-3">
+              <div class="w-33">
+                <p>Personnel responsibility (subordinate employees)</p>
+                <p class="text-muted mt-1">up to 100 employees</p>
+              </div>
+
+              <div class="w-33">
+                <p>Personal (HR – Manager)</p>
+                <p class="text-muted mt-1">University Hamburg</p>
+              </div>
+
+              <div class="w-33">
+                <p>Budget responsibility (projects / departments)</p>
+                <p class="text-muted mt-1">up to 10 Mio €</p>
+              </div>
+            </div>
+
+            <!-- Row # 2 -->
+            <div class="d-flex row mt-3">
+              <div class="w-33">
+                <p>Purchasing responsibility</p>
+                <p class="text-muted mt-1">up to 50 Mio €</p>
+              </div>
+
+              <div class="w-33">
+                <p>Revenue Responsibility</p>
+                <p class="text-muted mt-1">up to 10 Mio €</p>
+              </div>
+
+              <div class="w-33">
+                <p>Last year's salary</p>
+                <p class="text-muted mt-1">90.000 – 110.000 €</p>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <details class="detailsExpansion mt-3" id="professionalFocusDetails">
+          <summary>
+            <span>Professional Focus </span>
+            <span class="edit-icon">&#9998;</span>
+          </summary>
+          <div class="details">
+            <div class="d-flex row mt-3">
+              <div class="w-33">
+                <p>Professional focus</p>
+                <p class="text-muted mt-1">Corporate Management / Management</p>
+                <p class="text-muted mt-1">Corporate Management / Management</p>
+                <p class="text-muted mt-1">Corporate Management / Management</p>
+                <p class="text-muted mt-1">Purchase</p>
+              </div>
+
+              <div class="w-33">
+                <p>Areas of responsibility (core competencies)</p>
+                <p class="text-muted mt-1">University Hamburg</p>
+              </div>
+
+              <div class="w-33">
+                <p>Experience level</p>
+                <p class="text-muted mt-1">Expansion of the company</p>
+                <p class="text-muted mt-1">Finances IFRS</p>
+                <p class="text-muted mt-1">Change Management</p>
+                <p class="text-muted mt-1">Purchasing USA</p>
+              </div>
+            </div>
+
+            <!-- Row # 2 -->
+            <div class="d-flex row mt-3">
+              <div class="w-33">
+                <p>Purchasing responsibility</p>
+                <p class="text-muted mt-1">up to 50 Mio €</p>
+              </div>
+
+              <div class="w-33">
+                <p>Revenue Responsibility</p>
+                <p class="text-muted mt-1">up to 10 Mio €</p>
+              </div>
+
+              <div class="w-33">
+                <p>Last year's salary</p>
+                <p class="text-muted mt-1">90.000 – 110.000 €</p>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <details class="detailsExpansion mt-3" id="industryExperienceDetails">
+          <summary>
+            <span>Industry Experience </span>
+            <span class="edit-icon">&#9998;</span>
+          </summary>
+          <div class="details">
+            <div class="d-flex row mt-3">
+              <div class="w-50">
+                <p>Industry</p>
+                <p class="text-muted mt-1">Automotive</p>
+                <p class="text-muted mt-1">Industrial Service</p>
+              </div>
+
+              <div class="w-50">
+                <p>Experience Level</p>
+                <p class="text-muted mt-1">up to 5 years</p>
+                <p class="text-muted mt-1">up to 3 years</p>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <details class="detailsExpansion mt-3" id="languageDetails">
+          <summary>
+            <span>Languages & Abroad </span>
+            <span class="edit-icon">&#9998;</span>
+          </summary>
+
+          <div class="details">
+            <div class="d-flex row mt-3">
+              <div class="w-25">
+                <p>Language</p>
+                <p class="mt-2">Language</p>
+                <p class="text-muted mt-1">English</p>
+                <p class="text-muted mt-1">French</p>
+                <p class="text-muted mt-1">Spain</p>
+              </div>
+
+              <div class="w-25">
+                <p></p>
+                <p class="mt-3">Language Level</p>
+                <p class="text-muted mt-1">Bussiness Fluent</p>
+                <p class="text-muted mt-1">Basic</p>
+                <p class="text-muted mt-1">Advance</p>
+              </div>
+
+              <div class="w-25">
+                <p>Abroad</p>
+                <p class="mt-2">Land</p>
+                <p class="text-muted mt-1">Great Britain</p>
+              </div>
+
+              <div class="w-25">
+                <p></p>
+                <p class="mt-3">Duration</p>
+                <p class="text-muted mt-1">up to 4 years</p>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <details class="detailsExpansion mt-3" id="documentUploadDetails">
+          <summary>
+            <span>Document Upload </span>
+            <span class="edit-icon">&#9998;</span>
+          </summary>
+
+          <div class="details">
+            <p>Executive Summary</p>
+            <p>University Certificate</p>
+          </div>
+        </details>
+
+        <details class="detailsExpansion mt-3" id="privacyDetails">
+          <summary>
+            <span>Privacy</span>
+            <span class="edit-icon">&#9998;</span>
+          </summary>
+          <div class="details">
+            <div class="field d-flex" style="margin: 20px 0px">
+              <label for="privacyCheckBox" id="privacyCheckboxLabel"></label>
+              <input type="checkbox" name="privacy" id="privacyCheckBox" />
+              <label for="privacy" class="ml-1" id="privacyStatement"
+                >I accept the private policy</label
+              >
+            </div>
+          </div>
+        </details>
+
+        <details class="detailsExpansion mt-3" id="accountDetails">
+          <summary>
+            <span>Account</span>
+            <span class="edit-icon">&#9998;</span>
+          </summary>
+
+          <div class="details"></div>
+        </details>
+      </div>
+
+      <!-- Profile; -->
+      <div class="openner d-none">
+        <div class="field">
+          <form>
+            <div class="d-flex row">
+              <div class="field_dropdown w-50">
+                <label for="salution "
+                  >Salution <span class="requiredField">*</span></label
+                >
+                <input
+                  type="text"
+                  class="form-control w-100 salutionInput"
+                  placeholder="Please Select"
+                  required
+                  readonly
+                />
+
+                <div class="field_dropdown--menu">
+                  <p>Mrs</p>
+                  <p>Mr</p>
+                  <p>Diverse</p>
+                </div>
+
+                <div class="plus">
+                  <i class="ri-arrow-drop-down-line"></i>
+                </div>
+              </div>
+              <div class="w-50">
+                <label for="salution "
+                  >Title
+                  <span class="requiredField" style="opacity: 0">*</span></label
+                >
+                <input type="text" class="form-control w-100" />
+              </div>
+            </div>
+
+            <div class="d-flex row mt-1">
+              <div class="w-50">
+                <label for="firstName "
+                  >First Name <span class="requiredField">*</span></label
+                >
+                <input type="text" class="form-control w-100" required />
+              </div>
+
+              <div class="w-50">
+                <label for="sureName "
+                  >Surname <span class="requiredField">*</span></label
+                >
+                <input type="text" class="form-control w-100" required />
+              </div>
+            </div>
+
+            <div class="d-flex row mt-1 emailDiv">
+              <div class="w-50">
+                <label for="firstName "
+                  >Date <span class="requiredField">*</span></label
+                >
+                <input type="date" class="form-control w-100" required />
+              </div>
+
+              <div class="w-50"></div>
+            </div>
+
+            <!-- Street and zip code; -->
+
+            <div class="d-flex row mt-1">
+              <div class="w-50">
+                <label for="street "
+                  >Street <span class="requiredField">*</span></label
+                >
+                <input type="text" class="form-control w-100" required />
+              </div>
+
+              <div class="w-50">
+                <label for="zipcode "
+                  >Zip Code <span class="requiredField">*</span></label
+                >
+                <input type="text" class="form-control w-100" required />
+              </div>
+            </div>
+
+            <div class="d-flex row mt-1">
+              <div class="w-50">
+                <label for="place"
+                  >Place <span class="requiredField">*</span></label
+                >
+                <input type="text" class="form-control w-100" />
+              </div>
+
+              <div class="field_dropdown w-50">
+                <label for="land "
+                  >Land <span class="requiredField">*</span></label
+                >
+                <input
+                  type="text"
+                  class="form-control w-100 salutionInput"
+                  placeholder="Please Select"
+                  required
+                  readonly
+                />
+
+                <div class="field_dropdown--menu countries">
+                  <p>Germany</p>
+                  <p>Asutria</p>
+                  <p>Swizerland</p>
+                </div>
+
+                <div class="plus">
+                  <i class="ri-arrow-drop-down-line"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex row mt-1 emailDiv">
+              <div class="w-50">
+                <label for="firstName "
+                  >Email <span class="requiredField">*</span></label
+                >
+                <input type="email" class="form-control w-100" required />
+              </div>
+
+              <div class="w-50">
+                <label for="firstName "
+                  >Email 2<span class="requiredField">*</span></label
+                >
+                <input type="email" class="form-control w-100" required />
+              </div>
+            </div>
+
+            <!-- Row -->
+            <div class="d-flex row mt-1">
+              <div class="w-50">
+                <label for="teleNo">Telephone Number </label>
+                <input type="text" class="form-control w-100" />
+              </div>
+
+              <div class="w-50">
+                <label for="mobNo">Mobile Number </label>
+                <input type="text" class="form-control w-100" />
+              </div>
+            </div>
+
+            <div class="d-flex row mt-1 emailDiv">
+              <div class="w-50">
+                <label for="homepage ">Homepage </label>
+                <input type="text" class="form-control w-100" />
+              </div>
+
+              <div class="w-50"></div>
+            </div>
+
+            <div class="d-flex row mt-1">
+              <div class="w-100">
+                <label for="homepage ">Email Signature </label>
+                <textarea class="form-control" style="width: 100%"> </textarea>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="navigation_btns">
+          <button class="btn back">Back</button>
+          <button class="btn">Save</button>
+        </div>
+      </div>
+
+      <!-- Availiblity; -->
+      <div class="openner d-none" id="avaliliblityDiv">
+        <h3 class="title mt-3">Availiability</h3>
+
+        <div class="field">
+          <div class="d-flex row">
+            <div class="field_dropdown w-33">
+              <label for="date ">Availiabile from - DAY</label>
+              <input
+                type="text"
+                class="form-control w-100 salutionInput"
+                placeholder="Please Select"
+                required
+                readonly
+              />
+
+              <div class="field_dropdown--menu" id="dateAvailiblity"></div>
+
+              <div class="plus">
+                <i class="ri-arrow-drop-down-line"></i>
+              </div>
+            </div>
+
+            <div class="field_dropdown w-33">
+              <label for="date ">Available from - MONTH </label>
+              <input
+                type="text"
+                class="form-control w-100 salutionInput"
+                placeholder="Please Select"
+                required
+                readonly
+              />
+
+              <div class="field_dropdown--menu" id="monthAvailiblity"></div>
+
+              <div class="plus">
+                <i class="ri-arrow-drop-down-line"></i>
+              </div>
+            </div>
+
+            <div class="field_dropdown w-33">
+              <label for="date ">Availiabile from - DAY</label>
+              <input
+                type="text"
+                class="form-control w-100 salutionInput"
+                placeholder="Please Select"
+                required
+                readonly
+              />
+
+              <div class="field_dropdown--menu" id="yearAvailiblity"></div>
+
+              <div class="plus">
+                <i class="ri-arrow-drop-down-line"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="navigation_btns my-2">
+          <button class="btn back">Back</button>
+          <button class="btn">Save</button>
+        </div>
+      </div>
+
+      <!-- Education #################### -->
+      <div class="openner mt-3 d-none" id="educationDiv">
+        <h2 class="title">Education & Training</h2>
+        <p class="text-muted mt-3">Add a education to your cv.</p>
+        <div class="d-flex">
+          <div class="menu">
+            <p class="active">Studies</p>
+            <p>Training</p>
+            <p>School education</p>
+            <p>Further education</p>
+            <p>Continuing education</p>
+            <p>Seminar</p>
+            <p>Certification</p>
+            <p>Internship</p>
+          </div>
+
+          <div class="input_mask">
+            <div class="field m-0">
+              <div class="d-flex clone mt-3">
+                <div class="field_dropdown w-16">
+                  <label for="date">Availiabile from</label>
+                  <input
+                    type="date"
+                    class="form-control w-100"
+                    placeholder="Please Select"
+                    required
+                  />
+                </div>
+
+                <div class="field_dropdown w-16">
+                  <label for="date ">Available To </label>
+                  <input
+                    type="date"
+                    class="form-control w-100"
+                    placeholder="Please Select"
+                    required
+                  />
+                </div>
+
+                <div class="w-16">
+                  <label for="salution "
+                    >institution (name of the institution)
+                  </label>
+                  <input type="text" class="form-control w-100" />
+                </div>
+
+                <div class="w-16">
+                  <label for="salution ">Education </label>
+                  <input type="text" class="form-control w-100" />
+                </div>
+
+                <div class="w-16">
+                  <label for="salution ">Specialization </label>
+                  <input type="text" class="form-control w-100" />
+                </div>
+
+                <div class="w-16">
+                  <label for="Action ">Action </label>
+                  <div class="d-flex">
+                    <span class="icon">&#9998;</span>
+                    <span class="icon"><i class="ri-delete-bin-line"></i></span>
+                  </div>
+                </div>
+              </div>
+
+              <button class="AddRow">
+                <span>Add another field</span>
+                <span><i class="ri-add-line"></i></span>
+              </button>
+            </div>
+
+            <div class="navigation_btns mt-4">
+              <button class="btn back">Back</button>
+              <button class="btn">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Career ############# -->
+      <div class="openner mt-3 d-none" id="careerDiv">
+        <h2 class="title">Career</h2>
+        <p class="text-muted mt-3">
+          Please indicate your maximum level of responsibility in each case:
+        </p>
+        <div class="field">
+          <!-- Row # 1 -->
+          <div class="d-flex row">
+            <div class="field_dropdown w-50">
+              <label for="date"
+                ><b>Personnel responsibility (subordinate employees)</b>
+              </label>
+              <input
+                type="text"
+                class="form-control w-100 salutionInput"
+                placeholder="Please Select"
+                required
+                readonly
+              />
+
+              <div
+                class="field_dropdown--menu"
+                id="personalResponsiblityDropdown"
+              ></div>
+
+              <div class="plus">
+                <i class="ri-arrow-drop-down-line"></i>
+              </div>
+            </div>
+
+            <div class="field_dropdown w-50">
+              <label for="date "><b>Revenue Responsibility</b> </label>
+              <input
+                type="text"
+                class="form-control w-100 salutionInput"
+                placeholder="Please Select"
+                required
+                readonly
+              />
+
+              <div
+                class="field_dropdown--menu"
+                id="revenueResponsiblityDropdown"
+              ></div>
+
+              <div class="plus">
+                <i class="ri-arrow-drop-down-line"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row # 2 -->
+          <div class="d-flex row mt-3">
+            <div class="field_dropdown w-50">
+              <label for="date"><b>Personal (HR – Manager) </b> </label>
+              <input
+                type="text"
+                class="form-control w-100 salutionInput"
+                placeholder="Please Select"
+                required
+                readonly
+              />
+
+              <div
+                class="field_dropdown--menu"
+                id="personalHRManagerDropdown"
+              ></div>
+
+              <div class="plus">
+                <i class="ri-arrow-drop-down-line"></i>
+              </div>
+            </div>
+
+            <div class="field_dropdown w-50">
+              <label for="date "><b>last year's Salary</b></label>
+              <input
+                type="text"
+                class="form-control w-100 salutionInput"
+                placeholder="Please Select"
+                required
+                readonly
+              />
+
+              <div
+                class="field_dropdown--menu"
+                id="lastYearSalaryDropdown"
+              ></div>
+
+              <div class="plus">
+                <i class="ri-arrow-drop-down-line"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row # 3 -->
+          <div class="d-flex row mt-3">
+            <div class="field_dropdown w-50">
+              <label for="date"><b>Purchasing responsibility </b> </label>
+              <input
+                type="text"
+                class="form-control w-100 salutionInput"
+                placeholder="Please Select"
+                required
+                readonly
+              />
+
+              <div
+                class="field_dropdown--menu"
+                id="purchasingResponsibilityDropdown"
+              ></div>
+
+              <div class="plus">
+                <i class="ri-arrow-drop-down-line"></i>
+              </div>
+            </div>
+
+            <div class="field_dropdown w-50">
+              <label for="date "
+                ><b>Budget responsibility (projects / departments)</b></label
+              >
+              <input
+                type="text"
+                class="form-control w-100 salutionInput"
+                placeholder="Please Select"
+                required
+                readonly
+              />
+
+              <div
+                class="field_dropdown--menu"
+                id="budgetResponsiblityDropdown"
+              ></div>
+
+              <div class="plus">
+                <i class="ri-arrow-drop-down-line"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="navigation_btns mt-4">
+            <button class="btn back">Back</button>
+            <button class="btn">Save</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ############ Professional focus ######### -->
+      <div class="openner mt-3 d-none" id="professionalFocusDiv">
+        <h2 class="title">Professional Focus</h2>
+        <p class="text-muted mt-3 font-bold">
+          PLEASE INDICATE YOUR SPECIFIC KNOWLEDGE AND ASSIGN THE APPROPRIATE
+          LEVEL OF EXPERIENCE:
+        </p>
+
+        <div class="field m-0">
+          <div class="d-flex clone mt-3">
+            <div class="field_dropdown w-33">
+              <label for="date"><b>Professional focus</b> </label>
+              <input
+                type="text"
+                class="form-control w-100 salutionInput"
+                placeholder="Please Select"
+                required
+                readonly
+              />
+
+              <div
+                class="field_dropdown--menu"
+                id="professionalFocusDropdown"
+              ></div>
+
+              <div class="plus">
+                <i class="ri-arrow-drop-down-line"></i>
+              </div>
+            </div>
+
+            <div class="w-33">
+              <label for="date "
+                ><b>Areas of responsibility (core competencies)</b>
+              </label>
+              <input
+                type="text"
+                class="form-control w-100"
+                placeholder="Please Select"
+                required
+              />
+            </div>
+
+            <div class="field_dropdown w-33">
+              <label for="date"><b>Experience level</b> </label>
+              <input
+                type="text"
+                class="form-control w-100 salutionInput"
+                placeholder="Please Select"
+                required
+                readonly
+              />
+
+              <div
+                class="field_dropdown--menu"
+                id="experienceLevelDropdown"
+              ></div>
+
+              <div class="plus">
+                <i class="ri-arrow-drop-down-line"></i>
+              </div>
+            </div>
+
+            <div>
+              <label for="Action ">Action </label>
+              <div class="d-flex">
+                <span class="icon"><i class="ri-delete-bin-line"></i></span>
+              </div>
+            </div>
+          </div>
+
+          <button class="AddRow">
+            <span>Add another field</span>
+            <span><i class="ri-add-line"></i></span>
+          </button>
+        </div>
+
+        <div class="navigation_btns mt-4">
+          <button class="btn back">Back</button>
+          <button class="btn">Save</button>
+        </div>
+      </div>
+
+      <!-- ############ Industry Experience ######### -->
+      <div class="openner mt-3 d-none" id="industryExperienceDiv">
+        <h2 class="title">Indstry Experience</h2>
+        <p class="text-muted mt-3 font-bold">
+          Alle mit Sternchen gekennzeichnet Felder sind Pflichtfelder
+        </p>
+        <p class="mt-3 text-muted">
+          Geben Sie Ihre Branchenerfahrungen an. Erfassen Sie nur die
+          Branchenerfahrungen in exekutiver, nicht in beratender Funktion und
+          nur solche, die sich mindestens über ein halbes Jahr erstrecken.
+        </p>
+
+        <div class="field m-0">
+          <div class="d-flex clone mt-3">
+            <div class="field_dropdown w-50">
+              <label for="date"><b>Industry</b> </label>
+              <input
+                type="text"
+                class="form-control w-100 salutionInput"
+                placeholder="Please Select"
+                required
+                readonly
+              />
+
+              <div class="field_dropdown--menu" id="industryDropdown"></div>
+
+              <div class="plus">
+                <i class="ri-arrow-drop-down-line"></i>
+              </div>
+            </div>
+
+            <div class="field_dropdown w-50">
+              <label for="date"><b>Experience level</b> </label>
+              <input
+                type="text"
+                class="form-control w-100 salutionInput"
+                placeholder="Please Select"
+                required
+                readonly
+              />
+
+              <div
+                class="field_dropdown--menu"
+                id="experienceNumberLevelDropdown"
+              ></div>
+
+              <div class="plus">
+                <i class="ri-arrow-drop-down-line"></i>
+              </div>
+            </div>
+
+            <div>
+              <label for="Action ">Action </label>
+              <div class="d-flex">
+                <span class="icon"><i class="ri-delete-bin-line"></i></span>
+              </div>
+            </div>
+          </div>
+
+          <button class="AddRow">
+            <span>Add another field</span>
+            <span><i class="ri-add-line"></i></span>
+          </button>
+        </div>
+
+        <div class="navigation_btns mt-4">
+          <button class="btn back">Back</button>
+          <button class="btn">Save</button>
+        </div>
+      </div>
+
+      <!-- ############## LANGUAGE ABROAD ########## -->
+      <div class="openner mt-3 d-none" id="industryExperienceDiv">
+        <h2 class="title">Language & Abroad</h2>
+        <p class="text-muted mt-3 font-bold">
+          Specify the language level in each case:
+        </p>
+
+        <div class="field m-0">
+          <div class="d-flex clone mt-3">
+            <div class="field_dropdown w-50">
+              <label for="date"><b>Language</b> </label>
+              <input
+                type="text"
+                class="form-control w-100 salutionInput"
+                placeholder="Please Select"
+                required
+                readonly
+              />
+
+              <div class="field_dropdown--menu" id="languageDropdown"></div>
+
+              <div class="plus">
+                <i class="ri-arrow-drop-down-line"></i>
+              </div>
+            </div>
+
+            <div class="field_dropdown w-50">
+              <label for="date"><b>Language level</b> </label>
+              <input
+                type="text"
+                class="form-control w-100 salutionInput"
+                placeholder="Please Select"
+                required
+                readonly
+              />
+
+              <div
+                class="field_dropdown--menu"
+                id="languageLevelDropdown"
+              ></div>
+
+              <div class="plus">
+                <i class="ri-arrow-drop-down-line"></i>
+              </div>
+            </div>
+          </div>
+
+          <button class="AddRow">
+            <span>Add another field</span>
+            <span><i class="ri-add-line"></i></span>
+          </button>
+        </div>
+
+        <p class="mt-3">Indicate your work experience abroad</p>
+
+        <div class="field m-0">
+          <div class="d-flex clone mt-3">
+            <div class="field_dropdown w-50">
+              <label for="date"><b>Land</b> </label>
+              <input
+                type="text"
+                class="form-control w-100 salutionInput"
+                placeholder="Please Select"
+                required
+                readonly
+              />
+
+              <div class="field_dropdown--menu" id="landDropdownLangage"></div>
+
+              <div class="plus">
+                <i class="ri-arrow-drop-down-line"></i>
+              </div>
+            </div>
+
+            <div class="field_dropdown w-50">
+              <label for="date"><b>Duration</b> </label>
+              <input
+                type="text"
+                class="form-control w-100 salutionInput"
+                placeholder="Please Select"
+                required
+                readonly
+              />
+
+              <div
+                class="field_dropdown--menu"
+                id="languageDurationDropdown"
+              ></div>
+
+              <div class="plus">
+                <i class="ri-arrow-drop-down-line"></i>
+              </div>
+            </div>
+          </div>
+
+          <button class="AddRow">
+            <span>Add another field</span>
+            <span><i class="ri-add-line"></i></span>
+          </button>
+        </div>
+
+        <div class="navigation_btns mt-4">
+          <button class="btn back">Back</button>
+          <button class="btn">Save</button>
+        </div>
+      </div>
+
+      <!-- ############## Document Upload ############ -->
+      <div class="openner mt-3 d-none" id="documentUploadDiv">
+        <h2 class="title">Document Upload</h2>
+        <p class="text-muted mt-3">
+          Here you have the possibility to upload up to six documents (CV,
+          project list, references, etc.) to the server. Only files in pdf, jpg,
+          jpeg, doc, png, docx format and a maximum file size of 10 MB are
+          accepted.
+        </p>
+
+        <p class="mt-3">The following files have been uploaded</p>
+
+        <div class="filesUpload mt-3">
+          <div>
+            <p>Files</p>
+            <p>File Size</p>
+            <p>Delete</p>
+          </div>
+
+          <!-- For the files info -->
+          <div>
+            <p>Executive Summary</p>
+            <p>160,30 KB</p>
+            <p>
+              <i class="ri-delete-bin-line deleteIcon" class="deleteIcon"></i>
+            </p>
+          </div>
+
+          <div>
+            <p>University Testimony</p>
+            <p>70,28 KB</p>
+            <p><i class="ri-delete-bin-line deleteIcon"></i></p>
+          </div>
+        </div>
+
+        <div class="fileUpload mt-3">
+          <input type="file" />
+          <label>Download File</label>
+        </div>
+
+        <p class="mt-3">After the upload, the registration is complete.</p>
+
+        <div class="navigation_btns mt-4">
+          <button class="btn back">Back</button>
+          <button class="btn">Save</button>
+        </div>
+      </div>
+
+      <div class="openner mt-3 d-none" id="privacyDiv">
+        <h2 class="title">Privacy policy</h2>
+
+        <p class="text-muted mt-3">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum
+          dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+          commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+          occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+          mollit anim id est laborum
+        </p>
+
+        <p class="text-muted mt-1">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum
+        </p>
+
+        <p class="text-muted mt-1">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum
+        </p>
+
+        <div class="field d-flex" style="margin: 20px 0px">
+          <label for="privacyCheckBox" id="privacyCheckboxLabel"></label>
+          <input type="checkbox" name="privacy" id="privacyCheckBox" />
+          <label for="privacy" class="ml-1" id="privacyStatement"
+            >I accept the private policy</label
+          >
+        </div>
+      </div>
+    </main>
+
+    <!--  Custom JS Script -->
+
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/common.js"></script>
+    <script>
+      function closeAllDropdowns() {
+        dropdowns.forEach((dropdown) => {
+          const dropdownOptions = dropdown.querySelector(".dropdown-options");
+          dropdownOptions.classList.remove("active");
+        });
+      }
+
+      const dropdowns = document.querySelectorAll(".dropdown");
+      dropdowns.forEach((dropdown) => {
+        dropdown.addEventListener(
+          "click",
+          function () {
+            const dropdownOptions = this.querySelector(".dropdown-options");
+            if (dropdownOptions.classList.contains("active")) {
+              dropdownOptions.classList.remove("active");
+            } else {
+              closeAllDropdowns();
+              dropdownOptions.classList.add("active");
+            }
+          },
+          false
+        );
+
+        // Prevent event propagation for child options
+        const dropdownOptions = dropdown.querySelector(".dropdown-options");
+        dropdownOptions.addEventListener("click", function (event) {
+          event.stopPropagation();
+        });
+      });
+
+      document.addEventListener("click", function (event) {
+        if (!event.target.closest(".dropdown")) {
+          closeAllDropdowns();
+        }
+      });
+
+      setPrivacyStatement();
+      dropDownFunc();
+      setCountries();
+
+      // ################## For the date avaliliblity dropdowns ###############;
+      const dateAvailiblity = document.querySelector("#dateAvailiblity");
+      const monthAvailiblity = document.querySelector("#monthAvailiblity");
+      const dateAvailiblityArr = [
+        [1, 2, 3, 4, 5, 6, 7],
+        [8, 9, 10, 11, 12, 13, 14],
+        [15, 16, 17, 18, 19, 20, 21],
+        [22, 23, 24, 25, 26, 27, 28],
+        [29, 30, 31],
+      ];
+
+      const monthAvailiblityArr = [
+        ["January", "February", "March"],
+        ["April", "May", "June"],
+        ["July", "August", "September"],
+        ["October", "November", "December"],
+      ];
+
+      const yearAvailiblityArr = [
+        ["2023", "2024", "2025"],
+        ["2026", "2027", "2028"],
+        ["2029", "2030", "2031"],
+        ["2032", "2033", "2034"],
+      ];
+
+      setDropdownData(dateAvailiblity, dateAvailiblityArr);
+      setDropdownData(monthAvailiblity, monthAvailiblityArr);
+      setDropdownData(yearAvailiblity, yearAvailiblityArr);
+
+      // For the education menu toggling;
+      const menu = document.querySelector("#educationDiv  .menu");
+      const ps = menu.querySelectorAll("p");
+      let prev = ps[0];
+      ps.forEach((itm) => {
+        itm.addEventListener("click", function () {
+          prev.classList.remove("active");
+          itm.classList.toggle("active");
+          prev = itm;
+        });
+      });
+
+      // dropdowns for the career
+      const personalResponsiblityDropdown = document.getElementById(
+        "personalResponsiblityDropdown"
+      );
+
+      const revenueResponsiblityDropdown = document.getElementById(
+        "revenueResponsiblityDropdown"
+      );
+
+      const personalHRManagerDropdown = document.getElementById(
+        "personalHRManagerDropdown"
+      );
+
+      const lastYearSalaryDropdown = document.getElementById(
+        "lastYearSalaryDropdown"
+      );
+
+      const purchasingResponsibilityDropdown = document.getElementById(
+        "purchasingResponsibilityDropdown"
+      );
+
+      const budgetResponsiblityDropdown = document.getElementById(
+        "budgetResponsiblityDropdown"
+      );
+      const personalResponsiblityArr = [
+        ["for more than 1000 employee"],
+        ["Up to 1000 employees"],
+        ["Up to 500 employees"],
+        ["Up to 100 employees"],
+        ["Up to 50 employees"],
+        ["Up to 10 employees"],
+      ];
+
+      const revenueResponsiblityData = [
+        ["for more than 1 Mrd €"],
+        ["Up to 1 Mrd €"],
+        ["up to 500 Mio €"],
+        ["up to 100 Mio €"],
+        ["up to 50 Mio €"],
+        ["up to 10 Mio €"],
+      ];
+
+      const lastYearSalaryArr = [
+        ["200.000 – 250.000 €"],
+        ["180.000 – 200.000 €"],
+        ["150.000 – 180.000€"],
+        ["130.000 -150.000 €"],
+        ["110.000- 130.000 €"],
+        ["90.000 – 110.000 €"],
+        ["70.000- 90.000 €"],
+        ["50.000- 70.000 €"],
+        ["50.000 €"],
+      ];
+      setDropdownData(personalResponsiblityDropdown, personalResponsiblityArr);
+      setDropdownData(revenueResponsiblityDropdown, revenueResponsiblityData);
+      setDropdownData(personalHRManagerDropdown, personalResponsiblityArr);
+      setDropdownData(lastYearSalaryDropdown, lastYearSalaryArr);
+      setDropdownData(
+        purchasingResponsibilityDropdown,
+        revenueResponsiblityData
+      );
+      setDropdownData(budgetResponsiblityDropdown, revenueResponsiblityData);
+
+      // Professional Focus Dropdowns
+      const professionalFocusDropdown = document.querySelectorAll(
+        "#professionalFocusDropdown"
+      );
+
+      const professionalFocusArr = [
+        ["Corporate Management / Management"],
+        ["Administration"],
+        ["Purchase"],
+        ["Finance & Accounting"],
+        ["Research & Development / Design"],
+        ["Human Resources"],
+        ["IT / EDP"],
+        ["Marketing"],
+        ["PR / Corporate Communication"],
+        ["Production"],
+        ["Quality"],
+        ["Right"],
+        ["Sales & Distribution"],
+        ["Transport & Logistics"],
+        ["Other"],
+      ];
+
+      const experienceLevelDropdown = document.querySelectorAll(
+        "#experienceLevelDropdown"
+      );
+
+      const experienceLevelArr = [
+        ["Basic knowledge"],
+        ["Extensive experience"],
+        ["Expert"],
+      ];
+
+      setMultipleDropdownData(professionalFocusDropdown, professionalFocusArr);
+      setMultipleDropdownData(experienceLevelDropdown, experienceLevelArr);
+
+      // Dropdown for the industry experience
+      const industryDropdown = document.getElementById("industryDropdown");
+      const experienceNumberLevelDropdown = document.getElementById(
+        "experienceNumberLevelDropdown"
+      );
+      const industryArr = [
+        ["Automotive"],
+        ["Aviation"],
+        ["Banken und Finanzdienstleister"],
+        ["Building & Constructions"],
+        ["Chemicals"],
+        ["Consumer Electronics & High Tech"],
+        ["Consumer Goods"],
+        ["Energie & Versorgungswirtschaft"],
+        ["Health Care"],
+        ["Industrial Services"],
+        ["Industrial Goods & Machine Industry"],
+        ["Insurance"],
+        ["Life Science"],
+        ["Logistik"],
+        ["Media"],
+        ["Medical Devices & Technology"],
+        ["Metals & Mining"],
+        ["Oil & Gas"],
+        ["Paper & Packaging"],
+        ["Public Sector"],
+        ["Rail"],
+        ["Retail"],
+        ["Telecommunication"],
+        ["Travel"],
+      ];
+
+      const experienceNumberLevel = [
+        ["up to 1 year"],
+        ["up to 2 years"],
+        ["up to 3 years"],
+        ["up to 5 years"],
+        ["up to 7 years"],
+        ["up to 10 years"],
+        ["up to 12 years"],
+        ["more than 12 years"],
+      ];
+
+      setDropdownData(industryDropdown, industryArr);
+      setDropdownData(experienceNumberLevelDropdown, experienceNumberLevel);
+
+      // Language dropdown ################
+      setLanguage(document.getElementById("languageDropdown"));
+      const languagLevelArr = [
+        ["Basic"],
+        ["Colloquial"],
+        ["Advanced"],
+        ["Business fluent"],
+        ["Mother tongue"],
+      ];
+      const languageLevelDropdown = document.getElementById(
+        "languageLevelDropdown"
+      );
+
+      setDropdownData(languageLevelDropdown, languagLevelArr);
+      setCountries(document.getElementById("landDropdownLangage"));
+
+      const languageDurationArr = [
+        ["Up to 1 year"],
+        ["Up to 2 year"],
+        ["Up to 3 year"],
+        ["Up to 4 year"],
+        ["Up to 5 year"],
+        ["More then 5 years"],
+      ];
+
+      const languageDurationDropdown = document.getElementById(
+        "languageDurationDropdown"
+      );
+
+      setDropdownData(languageDurationDropdown, languageDurationArr);
+
+      // ############## FOR THE DOCUMENT UPLOAD ########
+      const documentUploadDiv = document.querySelector(
+        "#documentUploadDiv .fileUpload"
+      );
+      const documentUploadDivInp = documentUploadDiv.querySelector("input");
+      const documentUploadDivLabel = documentUploadDiv.querySelector("label");
+
+      documentUploadDivLabel.addEventListener("click", function () {
+        documentUploadDivInp.click();
+      });
+
+      // for the privacy ##########
+      const privacyDiv = document.querySelector("#privacyDiv");
+      setPrivacyStatement(privacyDiv);
+
+      // Add a row button to the education;
+      const addBtns = document.querySelectorAll(".AddRow");
+      addBtns.forEach((btn) => {
+        addRow(btn);
+      });
+
+      // ######################## Openner toggling;
+      const openners = document.querySelectorAll(".openner");
+      const btnsMenuBtns = document.querySelectorAll(".btns-menu button");
+      let prevActiveBtn = btnsMenuBtns[0],
+        prevOpenner = openners[0];
+      btnsMenuBtns.forEach((btn, idx) => {
+        btn.addEventListener("click", function () {
+          prevActiveBtn.classList.remove("active");
+          prevOpenner.classList.add("d-none");
+          btn.classList.toggle("active");
+          prevActiveBtn = btn;
+          let opennerActive = openners[idx];
+          opennerActive.classList.remove("d-none");
+          prevOpenner = opennerActive;
+        });
+      });
+    </script>
+  </body>
+</html>
