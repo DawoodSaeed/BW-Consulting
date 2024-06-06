@@ -26,9 +26,9 @@
     />
 
     <!-- Libk tot the css file -->
-    <link rel="stylesheet" href="../styles/candidatesearch.css" />
+    <link rel="stylesheet" href="../../styles/candidatesearch.css" />
 
-    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../../styles/main.css" />
 
     <style>
             .btn-primary {
@@ -389,6 +389,13 @@
           flex-direction: column !important;
         }
       }
+
+
+
+      /* For the button light color */
+      .btn.btn-light{
+        background-color: #ddd; color: #000
+      }
     </style>
   </head>
   <body>
@@ -398,7 +405,11 @@
         <div class="menu-top__left">
           <div class="logoDiv">
             <!-- <h1>CONSULTING</h1> -->
-            <img src="../images/logo.jpeg" alt="Logo Image" class="logoImage" />
+            <img
+              src="../../images/logo.jpeg"
+              alt="Logo Image"
+              class="logoImage"
+            />
           </div>
           <div class="d-none_small_screen ml-2">
             <p class="pageTwo__title">
@@ -593,7 +604,11 @@
             </div>
 
             <div>
-              <img src="../images/background_image.jpg" alt="" class="w-50" />
+              <img
+                src="../../images/background_image.jpg"
+                alt=""
+                class="w-50"
+              />
               <p>Change Image</p>
               <p>Delete Image</p>
               <p>Privacy Policy</p>
@@ -1702,12 +1717,297 @@
           >
         </div>
       </div>
+
+      <div class="openner mt-3 d-none" id="accountManagement">
+        <div class="d-block">
+          <div class="intro">
+            <p class="title">Account</p>
+          </div>
+
+          <div>
+            <p>Manage your user account</p>
+
+            <div class="btn-group">
+              <button class="btn btn-light">
+                <a href="#">Change Password</a>
+              </button>
+              <button class="btn btn-light">
+                <a href="#">Change Login Name</a>
+              </button>
+              <button class="btn btn-light">
+                <a href="#">Delete</a>
+              </button>
+            </div>
+          </div>
+
+          <div class="privacySection mt-5">
+            <p class="intro">Privacy Policy</p>
+            <p class="desc">
+              All fields marked with an asterisk are mandatory.
+            </p>
+
+            <div class="privacyDataInfo fields">
+              <div class="field d-flex" style="margin: 20px 0px">
+                <label for="privacyCheckBox" id="privacyCheckboxLabel"></label>
+                <input type="checkbox" name="privacy" id="privacyCheckBox" />
+                <label for="privacy" class="ml-1" id="privacyStatement"
+                  >I accept the private policy</label
+                >
+              </div>
+            </div>
+
+            <button class="btn" style="background-color: #ddd; color: #000">
+              <a href="dashboard.html">Back</a>
+            </button>
+          </div>
+        </div>
+
+        <!-- Change password reset div -->
+        <div class="container d-none" id="resetPassword">
+          <div class="intro">
+            <p class="title">Account</p>
+
+            <p>CHANGE PASSWORD</p>
+
+            <p>
+              <strong
+                >All fields marked with an asterisk are mandatory.
+              </strong>
+            </p>
+
+            <p>
+              You can change your password here. The password must be at least
+              five characters long. For security reasons, we recommend a
+              password that is at least eight characters long and has a mix of
+              letters and numbers. The password shouldn't contain any parts of
+              your name or email address, and it shouldn't be too easy to guess.
+              Please do not use special characters.
+            </p>
+          </div>
+
+          <div class="fields">
+            <div class="w-50">
+              <label for="oldPassword"
+                >Old Password <span class="star">*</span></label
+              >
+              <input type="text" class="form-control" />
+            </div>
+
+            <div class="w-50">
+              <label for="newPassword"
+                >New Password <span class="star">*</span></label
+              >
+              <input type="password" class="form-control" />
+              <div class="break"></div>
+              <label for="newPassword"
+                >Repeat Password <span class="star">*</span></label
+              >
+              <input type="password" class="form-control" />
+            </div>
+          </div>
+
+          <div class="btn-group">
+            <button class="btn btn-light backBtn">
+              <a href="#">BACK</a>
+            </button>
+            <button class="btn btn-light txtBtn">
+              <a href="#">SAVE</a>
+            </button>
+          </div>
+        </div>
+
+        <!-- For Password Resets Text Message -->
+        <div class="textPage d-none" id="email_send_page">
+          <div class="intro">
+            <h1 class="font-weight-300">
+              Personal Excellence <br />
+              <span class="font-weight-bold">Dashboard</span>
+            </h1>
+          </div>
+
+          <div class="d-flex">
+            <div class="forget_password--text">
+              <p>CHANGE PASSWORT</p>
+              <p>
+                <strong>Your password has been successfully changed. </strong>
+              </p>
+
+              <p>
+                You can now use your new password when logging in to the
+                Personal Excellence Dashboard.
+              </p>
+
+              <button class="btn mt-4 btn-light" style="padding: 10px 15px">
+                <a href="dashboard.html">PROFIL</a>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- For the login Name Change Div -->
+        <div class="container d-none" id="resetPassword">
+          <div class="intro">
+            <p class="title">Account</p>
+
+            <p>CHANGE LOGIN NAME</p>
+
+            <p>
+              <strong
+                >All fields marked with an asterisk are mandatory.
+              </strong>
+            </p>
+
+            <p>
+              Here you can change the user login. This must be an email address.
+            </p>
+          </div>
+
+          <div class="fields">
+            <div class="w-50">
+              <label for="oldEmail"
+                >Old Login Name <span class="star">*</span></label
+              >
+              <input type="email" class="form-control" />
+            </div>
+
+            <div class="w-50">
+              <label for="newLoginNames"
+                >New Login Name <span class="star">*</span></label
+              >
+              <input type="email" class="form-control" />
+              <div class="break"></div>
+              <label for="newLoginRepeat"
+                >Repeat Login Name <span class="star">*</span></label
+              >
+              <input type="email" class="form-control" />
+            </div>
+          </div>
+
+          <div class="btn-group">
+            <button class="btn btn-light backBtn">
+              <a href="#">BACK</a>
+            </button>
+            <button class="btn btn-light txtBtn">
+              <a href="#">SAVE</a>
+            </button>
+          </div>
+        </div>
+
+        <!-- For the login name chnage text div -->
+        <div id="email_send_page" class="textPage d-none">
+          <div class="intro">
+            <h1 class="font-weight-300">
+              Personal Excellence <br />
+              <span class="font-weight-bold">Dashboard</span>
+            </h1>
+          </div>
+
+          <div class="d-flex">
+            <div class="forget_password--text">
+              <p>CHANGE LOGIN NAME</p>
+              <p>
+                <strong>The login name has been successfully changed. </strong>
+              </p>
+
+              <p>
+                You can now use your new login name when logging in to the
+                Interim Management Dashboard.
+              </p>
+
+              <button class="btn mt-4 btn-light" style="padding: 10px 15px">
+                <a href="dashboard.html">PROFIL</a>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- For the delete account -->
+        <div class="container d-none" id="resetPassword">
+          <div class="intro">
+            <p class="title">Account</p>
+
+            <p>DELETE USER ACCOUNT</p>
+
+            <p>
+              <strong
+                >All fields marked with an asterisk are mandatory.
+              </strong>
+            </p>
+
+            <p>
+              Please note that if you delete your user account, all stored
+              information will be irrevocably lost and cannot be restored. If
+              you really want to delete your
+              <strong>Personal Excellence Portal</strong> account, please enter
+              a reason for doing so here and confirm the deletion of your user
+              data by entering your password.
+            </p>
+          </div>
+
+          <div class="fields">
+            <div>
+              <label for="message">Your Message</label>
+              <textarea class="form-control"> </textarea>
+
+              <div class="break"></div>
+
+              <label for="password"
+                >Your Password <span class="star">*</span></label
+              >
+              <input
+                type="password"
+                class="form-control"
+                id="deletePasswordAuth"
+              />
+            </div>
+          </div>
+
+          <div class="btn-group">
+            <button class="btn btn-light backBtn">
+              <a href="#">BACK</a>
+            </button>
+            <button class="btn btn-light txtBtn">
+              <a href="#">DELETE</a>
+            </button>
+          </div>
+
+          <!-- <div class="main-content"></div> -->
+          <!-- Overlay -->
+          <!-- <div class="overlay"></div> -->
+
+          <!-- <script src="../../scripts/main.js"></script> -->
+        </div>
+
+        <!-- For the delete account text -->
+        <div id="email_send_page" class="textPage d-none">
+          <div class="intro">
+            <h1 class="font-weight-300">
+              Personal Excellence <br />
+              <span class="font-weight-bold">Dashboard</span>
+            </h1>
+          </div>
+
+          <div class="d-flex">
+            <div class="forget_password--text">
+              <p>DELETE USER ACCOUNT</p>
+              <p>
+                <strong>Your account has been successfully deleted </strong>
+              </p>
+
+              <p>
+                Too bad you unsubscribed. We look forward to welcoming you back
+                to our Personal Excellence Dashboard at a later date.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
 
     <!--  Custom JS Script -->
 
-    <script src="../scripts/main.js"></script>
-    <script src="../scripts/common.js"></script>
+    <script src="../../scripts/main.js"></script>
+    <script src="../../scripts/common.js"></script>
     <script>
       function closeAllDropdowns() {
         dropdowns.forEach((dropdown) => {
@@ -2003,6 +2303,52 @@
           prevOpenner = opennerActive;
         });
       });
+
+      // For the account management tab
+      const accountManagementElem =
+        document.getElementById("accountManagement");
+      const mainDivAccount = accountManagementElem.querySelector("div");
+      const containersAccountTab =
+        accountManagementElem.querySelectorAll(".container");
+      let prevSelect = mainDivAccount;
+      // For the main pages that are show after the button is cicked
+      mainDivAccount.querySelectorAll(".btn-group .btn").forEach((btn, idx) => {
+        btn.addEventListener("click", function () {
+          // For the previosu selected div
+          prevSelect.classList.remove("d-block");
+          prevSelect.classList.add("d-none");
+
+          let nextElem = containersAccountTab[idx];
+          nextElem.classList.remove("d-none");
+          nextElem.classList.add("d-block");
+          nextElem
+            .querySelector(".backBtn")
+            .addEventListener("click", function () {
+              prevSelect.classList.remove("d-block");
+              prevSelect.classList.add("d-none");
+
+              mainDivAccount.classList.remove("d-none");
+              mainDivAccount.classList.add("d-block");
+
+              prevSelect = mainDivAccount;
+            });
+
+          nextElem
+            .querySelector(".txtBtn")
+            .addEventListener("click", function () {
+              prevSelect.classList.remove("d-block");
+              prevSelect.classList.add("d-none");
+              const pageToShowElem =
+                document.querySelectorAll(".textPage")[idx];
+              pageToShowElem.classList.remove("d-none");
+              pageToShowElem.classList.add("d-block");
+            });
+
+          prevSelect = nextElem;
+        });
+      });
     </script>
+
+    <!-- <script src="../scripts/main.js"></script> -->
   </body>
 </html>

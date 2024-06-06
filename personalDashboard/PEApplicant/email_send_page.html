@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Personal Dashboard</title>
+    <title>Registration</title>
 
     <!-- Font Awesome Link -->
     <link
@@ -14,10 +14,18 @@
       referrerpolicy="no-referrer"
     />
     <!-- stylesheet file -->
-    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../../styles/main.css" />
 
     <!-- Script -->
-    <script src="../scripts/main.js" defer></script>
+    <script src="../../scripts/main.js" defer></script>
+
+    <style>
+      body,
+      .container {
+        background: #fff;
+        overflow: auto;
+      }
+    </style>
   </head>
   <body>
     <div class="main-menu">
@@ -26,10 +34,20 @@
         <div class="menu-top__left">
           <div class="logoDiv">
             <!-- <h1>CONSULTING</h1> -->
-            <img src="../images/logo.jpeg" alt="Logo Image" class="logoImage" />
+            <img
+              src="../../images/logo.jpeg"
+              alt="Logo Image"
+              class="logoImage"
+            />
           </div>
           <div class="d-none_small_screen ml-2">
-            <p class="hover-title">Global</p>
+            <p class="pageTwo__title">
+              Personal Excellence
+              <span class="pageTwo__title-italic">Dashboard</span>
+            </p>
+            <p class="hover-title hover-title__pageTwo" style="opacity: 0">
+              Global
+            </p>
           </div>
         </div>
 
@@ -63,27 +81,10 @@
           <div class="btn-primary dropdown">
             <span class="fontSize_smallScreen">
               <i class="fa-solid fa-arrow-right-to-bracket"></i> Registration
-              <i class="fa-solid fa-chevron-down" style="font-size: 12px"></i>
             </span>
 
-            <div class="dropdown-options registration_dropdown close">
-              <p>Wählen Sie Ihren Bereich</p>
-
-              <div class="registration_dropdown-subitems mt-2">
-                <h3>Personal Executive​</h3>
-                <a href="">Applicant (Registration)</a>
-                <a href="">Company (Registration) </a>
-                <a href="">Login </a>
-              </div>
-
-              <div class="registration_dropdown-subitems mb-2">
-                <h3>Interim Management​</h3>
-                <a href="">Interim Manager (Registration)</a>
-                <a href="">Company (Registration) </a>
-                <a href="">Login </a>
-              </div>
-
-              <h3><a href="">Logout</a></h3>
+            <div class="dropdown-options menutwo_registration_dropdown close">
+              <a>Logout</a>
             </div>
           </div>
         </div>
@@ -99,232 +100,69 @@
         </div>
       </div>
 
+      <!-- Small screen navbar toggler -->
       <div class="menu-bottom_smallScreen mt-2">
         <i class="fa-solid fa-bars"></i>
         <div class="ml-1">
           <p class="small_hover-title">Global</p>
         </div>
       </div>
+
       <div class="menu-bottom">
         <div class="menu-left">
-          <div class="dropdown_full">
+          <div class="dropdown">
             <span class="hover"
-              ><a>Consulting</a>
+              ><a>My Account</a>
               <i class="fa-solid fa-chevron-down icon-color"></i
             ></span>
-            <div class="dropdown-options dropdown-flex-hovered w-50 close">
-              <div class="dropdown-options__w100-first">
-                <div style="width: 70%">
-                  <img
-                    src="../images/expertise_image.jpg"
-                    alt="Consulting Image"
-                    class="image-size"
-                  />
-                  <p class="mt-2">
-                    We support companies and top executives with extensive
-                    competence in business models, organizational structures,
-                    processes and systems to successfully align their
-                    organizations for the future – across whole companies
-                  </p>
-                </div>
 
-                <h3 class="mt-3 row">
-                  <i class="fa-solid fa-arrow-right-long"></i>
-                  <a href="" class="ml-1">Explore More</a>
-                </h3>
+            <div class="dropdown-options close" id="dashboard_opt1">
+              <div class="hover">
+                <a href="dashboard.html">Profil</a>
               </div>
-              <div class="dropdown-options__w100-second"></div>
-              <div class="dropdown-options__w100-third"></div>
-            </div>
-          </div>
-          <div class="dropdown" id="dropdown_personExcellence">
-            <span class="hover"
-              ><a>Personal Excellence</a>
-              <i class="fa-solid fa-chevron-down icon-color"></i
-            ></span>
-            <div class="dropdown-options w-35 p-40 close">
-              <div class="row justify-space-between">
-                <div class="ml-3">
-                  <h3 class="border-bottom">Fur Unternehmen</h3>
-                  <p class="hover"><a href="">Ubersicht</a></p>
-                  <p class="hover"><a href="">Executive Search</a></p>
-                  <p class="hover"><a href="">Kandidatensuche</a></p>
-                </div>
-
-                <div class="ml-3">
-                  <h3 class="border-bottom">Fur Bewerber</h3>
-                  <p class="hover"><a href="">Ubersicht</a></p>
-                  <p class="hover"><a href="">initiativbewerbung</a></p>
-                  <p class="hover">
-                    <a href="">Executive Search fur Fuhrungskrafte</a>
-                  </p>
-                </div>
+              <div class="hover">
+                <a href="dashboard.html">Personal Data </a>
               </div>
-            </div>
-          </div>
-          <div class="dropdown_full">
-            <span class="hover"
-              ><a>Interim Management</a>
-              <i class="fa-solid fa-chevron-down icon-color"></i
-            ></span>
-            <div class="dropdown-options dropdown-flex-hovered w-50 close">
-              <div class="ml-3">
-                <h3 class="border-bottom">General Management</h3>
-                <p class="hover"><a href="">Interim CEO</a></p>
-                <p class="hover"><a href="">Interim COO</a></p>
-                <p class="hover"><a href="">Interim CDO</a></p>
-                <p class="hover"><a href="">Interim CRO</a></p>
-                <p class="hover"><a href="">Interim CFO</a></p>
-                <p class="hover"><a href="">Interim Legal & Compilance</a></p>
+              <div class="hover">
+                <a href="dashboard.html">Availability</a>
               </div>
-
-              <div class="ml-3">
-                <h3 class="border-bottom">Operations</h3>
-                <p class="hover"><a href="">Interim Manager Purchasing</a></p>
-                <p class="hover">
-                  <a href="">Interim Manager Supply Chain Management</a>
-                </p>
-                <p class="hover">
-                  <a href="">Interim Manager IT Management</a>
-                </p>
-                <p class="hover">
-                  <a href="">Interim Manager Distribution & Management</a>
-                </p>
-                <p class="hover">
-                  <a href="">Interim Manager Quality Management</a>
-                </p>
-                <p class="hover">
-                  <a href=""
-                    >Interim Manager Produktionsleitung & Werksleitung</a
-                  >
-                </p>
+              <div class="hover">
+                <a href="dashboard.html">Education</a>
               </div>
-
-              <div class="ml-3">
-                <h3 class="border-bottom">Personal (HR)</h3>
-                <p class="hover"><a href="">Interim HR Management</a></p>
-                <p class="hover"><a href="">Interim Recruitment</a></p>
-                <p class="hover"><a href="">HR Bussiness Patner</a></p>
-                <p class="hover"><a href="">HR-Development & Coaching</a></p>
-                <p class="hover"><a href="">HR Strategies & Consulting</a></p>
-                <p class="hover"><a href="">Interim Manager Payroll</a></p>
+              <div class="hover">
+                <a href="dashboard.html">Career</a>
               </div>
-
-              <div class="ml-3">
-                <h3 class="border-bottom">Finance</h3>
-                <p class="hover">
-                  <a href="">Interim Management Controlling</a>
-                </p>
-                <p class="hover"><a href="">Interim Manager Treasury</a></p>
-                <p class="hover">
-                  <a href="">Interim Manager Rechnungswesen</a>
-                </p>
-
-                <h3 class="border-bottom mt-2">Sales & Management</h3>
-                <p class="hover">
-                  <a href="">Interim Management Marketing</a>
-                </p>
-                <p class="hover">
-                  <a href="">Interim Manager Sales & Vertrieb</a>
-                </p>
-                <p class="hover">
-                  <a href="">Interim Manager Corporate Communication</a>
-                </p>
+              <div class="hover">
+                <a href="dashboard.html">Professional focus</a>
               </div>
-            </div>
-          </div>
-          <div class="dropdown_full">
-            <span class="hover"
-              ><a>Industries</a>
-              <i class="fa-solid fa-chevron-down icon-color"></i
-            ></span>
-            <div class="dropdown-options dropdown-flex-hovered close">
-              <div class="ml-3" style="flex: 1.5">
-                <div style="width: 70%">
-                  <img
-                    src="../images/expertise_image.jpg"
-                    alt="Consulting Image"
-                    class="image-size"
-                  />
-                  <p class="mt-2">
-                    We support companies and top executives with extensive
-                    competence in business models, organizational structures,
-                    processes and systems to successfully align their
-                    organizations for the future – across whole companies
-                  </p>
-                </div>
-
-                <h3 class="mt-3 row">
-                  <i class="fa-solid fa-arrow-right-long"></i>
-                  <a href="" class="ml-1">Explore More</a>
-                </h3>
+              <div class="hover">
+                <a href="dashboard.html">Industry experiences</a>
               </div>
-
-              <div class="ml-3">
-                <p class="hover"><a href="">Automotive</a></p>
-                <p class="hover"><a href="">Aviation</a></p>
-                <p class="hover">
-                  <a href="">Banken und Finanzdienstleister</a>
-                </p>
-                <p class="hover">
-                  <a href="">Building & Constructions</a>
-                </p>
-
-                <p class="hover">
-                  <a href="">Chemicals</a>
-                </p>
-
-                <p class="hover">
-                  <a href="">Consumer Electronics & High Tech</a>
-                </p>
-
-                <p class="hover">
-                  <a href="">Consumer Goods</a>
-                </p>
-
-                <p class="hover">
-                  <a href="">Health Care</a>
-                </p>
+              <div class="hover">
+                <a href="dashboard.html">Languages and abroad </a>
               </div>
-
-              <div class="ml-3">
-                <p class="hover"><a href="">Industrial Services</a></p>
-                <p class="hover">
-                  <a href="">Industrial Goods & Machine Industry</a>
-                </p>
-                <p class="hover"><a href="">Insurance</a></p>
-                <p class="hover"><a href="">Life Science</a></p>
-                <p class="hover"><a href="">Logistik</a></p>
-                <p class="hover"><a href="">Media</a></p>
-                <p class="hover"><a href="">Medical Devices & Technology</a></p>
-                <p class="hover"><a href="">Metals & Mining</a></p>
+              <div class="hover">
+                <a href="dashboard.html">Upload documents </a>
               </div>
-
-              <div class="ml-3">
-                <p class="hover"><a href="">Oil & Gas</a></p>
-                <p class="hover">
-                  <a href="">Paper & Packaging</a>
-                </p>
-                <p class="hover"><a href="">Public Sector</a></p>
-                <p class="hover"><a href="">Rail</a></p>
-                <p class="hover"><a href="">Retail</a></p>
-                <p class="hover"><a href="">Telecommunication</a></p>
-                <p class="hover"><a href="">Travel</a></p>
-                <p class="hover"><a href="">Utilities</a></p>
+              <div class="hover">
+                <a href="dashboard.html">Privacy</a>
+              </div>
+              <div class="hover">
+                <a href="dashboard.html">Account</a>
               </div>
             </div>
           </div>
           <div class="dropdown">
             <span class="hover"
-              ><a>Job Portal</a>
-              <i class="fa-solid fa-chevron-down icon-color"></i
+              ><a>Jobs</a> <i class="fa-solid fa-chevron-down icon-color"></i
             ></span>
+
             <div class="dropdown-options close">
-              <div class="hover border-bottom">
-                <a href="">Personal Execellence Jobs </a>
+              <div class="hover">
+                <a href="#">Jobs Search</a>
               </div>
               <div class="hover">
-                <a href="">Interim Management Projects </a>
+                <a href="#">Apllication Status</a>
               </div>
             </div>
           </div>
@@ -748,7 +586,7 @@
             <div class="row border-bottom justify-space-between">
               <div style="width: 50%">
                 <img
-                  src="../images/expertise_image.jpg"
+                  src="../../images/expertise_image.jpg"
                   alt="Consulting Image"
                   style="width: 100%"
                 />
@@ -845,321 +683,30 @@
       </div>
 
       <header class="header"></header>
-      <main>
+      <main id="email_send_page">
         <div class="intro">
-          <small class="primary_color">For Applicant</small>
-          <h1>Registration</h1>
-          <p>
-            Take the first step and fill in the following fields. We will then
-            get back to you as soon as possible with the next steps. Membership
-            in the UBW Consulting pool is generally free of charge. Get started
-            now – with UBW Consulting. We look forward to hearing from you.
-          </p>
+          <h1 class="font-weight-300">
+            Personal Excellence
+            <br />
+            <span class="font-weight-bold">Dashboard</span>
+          </h1>
         </div>
 
-        <!-- For the input fields -->
-        <div class="field">
-          <form>
-            <div class="d-flex row">
-              <div class="field_dropdown w-50">
-                <label for="salution "
-                  >Salution <span class="requiredField">*</span></label
-                >
-                <input
-                  type="text"
-                  class="form-control w-100"
-                  placeholder="Please Select"
-                  id="salutionInput"
-                  required
-                  readonly
-                />
-
-                <div class="field_dropdown--menu">
-                  <p>Mrs</p>
-                  <p>Mr</p>
-                  <p>Diverse</p>
-                </div>
-
-                <div class="plus">
-                  <i class="fa-solid fa-plus"></i>
-                </div>
-              </div>
-              <div class="w-50">
-                <label for="salution "
-                  >Title
-                  <span class="requiredField" style="opacity: 0">*</span></label
-                >
-                <input type="text" class="form-control w-100" />
-              </div>
-            </div>
-
-            <div class="d-flex row mt-1">
-              <div class="w-50">
-                <label for="firstName "
-                  >First Name <span class="requiredField">*</span></label
-                >
-                <input type="text" class="form-control w-100" required />
-              </div>
-
-              <div class="w-50">
-                <label for="sureName "
-                  >Surname <span class="requiredField">*</span></label
-                >
-                <input type="text" class="form-control w-100" required />
-              </div>
-            </div>
-
-            <div class="d-flex row mt-1 emailDiv">
-              <div class="w-50">
-                <label for="firstName "
-                  >Date of Birth<span class="requiredField">*</span></label
-                >
-                <input type="date" class="form-control w-100" required />
-              </div>
-
-              <div class="w-50"></div>
-            </div>
-
-            <h3 class="primary_color mt-4">Contact Details</h3>
-            <!-- Street and zip code; -->
-
-            <div class="d-flex row mt-1">
-              <div class="w-50">
-                <label for="street "
-                  >Street <span class="requiredField">*</span></label
-                >
-                <input type="text" class="form-control w-100" required />
-              </div>
-
-              <div class="w-50">
-                <label for="zipcode "
-                  >Zip Code <span class="requiredField">*</span></label
-                >
-                <input type="text" class="form-control w-100" required />
-              </div>
-            </div>
-
-            <div class="d-flex row mt-1">
-              <div class="w-50">
-                <label for="place"
-                  >Place <span class="requiredField">*</span></label
-                >
-                <input type="text" class="form-control w-100" />
-              </div>
-
-              <div class="field_dropdown w-50">
-                <label for="land "
-                  >Land <span class="requiredField">*</span></label
-                >
-                <input
-                  type="text"
-                  class="form-control w-100"
-                  placeholder="Please Select"
-                  id="salutionInput"
-                  required
-                  readonly
-                />
-
-                <div class="field_dropdown--menu countries">
-                  <p>Germany</p>
-                  <p>Asutria</p>
-                  <p>Swizerland</p>
-                </div>
-
-                <div class="plus">
-                  <i class="fa-solid fa-plus"></i>
-                </div>
-              </div>
-            </div>
-
-            <div class="d-flex row mt-1 emailDiv">
-              <div class="w-50">
-                <label for="firstName "
-                  >Email <span class="requiredField">*</span></label
-                >
-                <input type="email" class="form-control w-100" required />
-              </div>
-
-              <div class="w-50">
-                <label for="mobNo"
-                  >Mobile Number <span class="requiredField">*</span></label
-                >
-                <input type="text" class="form-control w-100" />
-              </div>
-            </div>
-
-            <!-- Row -->
-            <h3 class="primary_color mt-4 mb-1">Your Document</h3>
-            <div class="documents">
-              <p class="" style="margin: 20px 0px">
-                Here you can easily upload your documents, but at least your CV
-                or short profile.
-              </p>
-
-              <div class="field_dropdown w-100">
-                <label for="document "
-                  >Document Upload<span class="requiredField">*</span></label
-                >
-                <input
-                  type="text"
-                  class="form-control w-100"
-                  placeholder="Please Select"
-                  id="salutionInput"
-                  required
-                  readonly
-                />
-
-                <div class="field_dropdown--menu">
-                  <p>Photo</p>
-                  <p>Cover Letter</p>
-                  <p>Certificate</p>
-                  <p>Employement References</p>
-                  <p>Futher References</p>
-                </div>
-
-                <div class="plus">
-                  <i class="fa-solid fa-plus"></i>
-                </div>
-              </div>
-            </div>
-            <p class="text-muted mt-2">
-              ALLOWED FORMATS: .DOC, .DOCX, .PDF, JPG,. JPEG., PNG,. / MAXIMUM
-              FILE SIZE: 10 MB
+        <div class="d-flex">
+          <div class="forget_password--text">
+            <p>Forgot your password?</p>
+            <p>
+              An email with a link to change your password has been sent to the
+              address provided.
             </p>
 
-            <div class="comment mt-3">
-              <h3>Graduation</h3>
-
-              <label for="comment" class="m-0 mt-2">Comment</label>
-              <textarea
-                name=""
-                id="comment"
-                class="form-control w-100 p-1"
-                style="height: 200px; border: 1px solid #ccc"
-              ></textarea>
-            </div>
-            <div class="mt-2 privacy">
-              <div>
-                <label for="privacyCheckBox" id="privacyCheckboxLabel"></label>
-                <input type="checkbox" name="privacy" id="privacyCheckBox" />
-                <label for="privacy">I accept the private policy</label>
-              </div>
-              <a href="../privacy.html">Privacy Policy</a> <br />
-              <button class="btn">Send In</button>
-            </div>
-          </form>
+            <p>Please also check the junk email or spam folder of your inbox</p>
+          </div>
         </div>
       </main>
       <!-- Overlay -->
       <!-- <div class="overlay"></div> -->
     </div>
-    <script src="../scripts/common.js"></script>
-    <script>
-      const privacyStatement = document.getElementById("privacyStatement");
-      //   helper method for the class toggling
-      const toggleClass = function (elem, className) {
-        if (elem.classList.contains(className)) {
-          elem.classList.remove(className);
-        } else {
-          elem.classList.add(className);
-        }
-      };
-      // For the privacy checkbox;
-      const privacyCheckBoxLabel = document.getElementById(
-        "privacyCheckboxLabel"
-      );
-      const privacyCheckBox = document.getElementById("privacyCheckBox");
-
-      //   check if the checkbox is already checked;
-
-      if (localStorage.getItem("privacy") && localStorage.getItem("time")) {
-        privacyCheckBox.checked = true;
-        privacyStatement.textContent = `You agreed to our privacy policy on ${localStorage.getItem(
-          "time"
-        )}`;
-        toggleClass(privacyCheckBoxLabel, "active");
-        console.log("Privacy already set");
-      }
-
-      // For changing the background of the label
-      privacyCheckBoxLabel.addEventListener("click", function () {
-        toggleClass(this, "active");
-        // Check the state of the checkbox;
-      });
-
-      // TGo detect the chnage in orignal checkbox; and rhe store in it label;
-      privacyCheckBox.addEventListener("change", function () {
-        if (this.checked) {
-          const currentDate = new Date();
-
-          // Format the date as "dd.mm.yyyy"
-          const formattedDate = `${padNumber(
-            currentDate.getDate()
-          )}.${padNumber(
-            currentDate.getMonth() + 1
-          )}.${currentDate.getFullYear()}.`;
-
-          // Display or use the formatted date as needed
-          console.log(formattedDate);
-          localStorage.setItem("privacy", true);
-          localStorage.setItem("time", formattedDate);
-          console.log("Saved in the Storage");
-        } else {
-          localStorage.removeItem("privacy");
-          localStorage.removeItem("time");
-          console.log("Removed from the Storage");
-        }
-      });
-
-      // Function to pad a number with leading zero if needed
-      function padNumber(num) {
-        return num.toString().padStart(2, "0");
-      }
-
-      const dropdownMenus = document.querySelectorAll(".field_dropdown--menu");
-      const dropdown = document.querySelector(".field_dropdown");
-      const pluses = document.querySelectorAll(".plus");
-
-      // Main field;
-      const salutionInputs = document.querySelectorAll("#salutionInput");
-      // console.log(salutionInputs);
-
-      const attachEvent = function (element) {
-        element.forEach((salutionInput, idx) => {
-          salutionInput.addEventListener("click", function () {
-            pluses[idx].style.color = `#58a09a`;
-            dropdownMenus[idx].classList.add("field_dropdown--menuActive");
-            const dropdownMenuList = dropdownMenus[idx].querySelectorAll("p");
-
-            dropdownMenuList.forEach((itm) => {
-              itm.addEventListener("click", function () {
-                salutionInputs[idx].value = itm.textContent;
-                //   After clicking close the dropdownmenu
-                dropdownMenus[idx].classList.remove(
-                  "field_dropdown--menuActive"
-                );
-
-                pluses[idx].style.color = `gray`;
-              });
-            });
-          });
-        });
-      };
-
-      attachEvent(salutionInputs);
-      attachEvent(pluses);
-
-      // For the dashboard
-
-      console.log(getCountries());
-
-      const countriesDiv = document.querySelector(".countries");
-      countriesDiv.innerHTML = ``;
-      for (const [key, value] of Object.entries(getCountries())) {
-        const p = document.createElement("p");
-        p.textContent = value;
-        countriesDiv.appendChild(p);
-      }
-    </script>
+    <script></script>
   </body>
 </html>
