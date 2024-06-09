@@ -264,7 +264,7 @@
         width: max-content !important;
         color: #000;
         font-weight: 500;
-        padding: 10px 20px;
+        padding: 10px;
         background: #ddd;
         border: 0px;
         text-transform: capitalize;
@@ -547,23 +547,21 @@
       </div>
     </div>
 
-    <main class="container">
-      <div
-        class="btns-menu d-flex row justify-content-centera align-items-center"
-      >
-        <button class="btn active">profile</button>
-        <button class="btn">Personal Data</button>
-        <button class="btn">Availability</button>
-        <button class="btn">Education</button>
-        <button class="btn">Career</button>
-        <button class="btn">Professional focus</button>
-        <button class="btn">Industry Experience</button>
-        <button class="btn">Language & Abroad</button>
-        <button class="btn">Document Upload</button>
-        <button class="btn">Privacy</button>
-        <button class="btn">Account</button>
-      </div>
+    <div class="btns-menu d-flex row align-items-center mt-2">
+      <button class="btn active">profile</button>
+      <button class="btn">Personal Data</button>
+      <button class="btn">Availability</button>
+      <button class="btn">Education</button>
+      <button class="btn">Career</button>
+      <button class="btn">Professional focus</button>
+      <button class="btn">Industry Experience</button>
+      <button class="btn">Language & Abroad</button>
+      <button class="btn">Document Upload</button>
+      <button class="btn">Privacy</button>
+      <button class="btn">Account</button>
+    </div>
 
+    <main class="container">
       <!-- Personal Data; -->
       <div class="openner">
         <p class="title mt-3">Profile - Overview</p>
@@ -1153,7 +1151,7 @@
 
           <div class="input_mask">
             <div class="field m-0">
-              <div class="d-flex clone mt-3">
+              <div class="d-flex clone mt-3 educationRow">
                 <div class="field_dropdown w-16">
                   <label for="date">Availiabile from</label>
                   <input
@@ -1195,7 +1193,452 @@
                   <label for="Action ">Action </label>
                   <div class="d-flex">
                     <span class="icon">&#9998;</span>
-                    <span class="icon"><i class="ri-delete-bin-line"></i></span>
+                    <span
+                      class="icon dltIcon d-none"
+                      onclick="deleteRow(this, 'educationRow')"
+                      ><i class="d-none ri-delete-bin-line"></i
+                    ></span>
+                  </div>
+                </div>
+              </div>
+
+              <button class="AddRow">
+                <span>Add another field</span>
+                <span><i class="ri-add-line"></i></span>
+              </button>
+            </div>
+
+            <div class="navigation_btns mt-4">
+              <button class="btn back">Back</button>
+              <button class="btn">Save</button>
+            </div>
+          </div>
+
+          <div class="input_mask d-none">
+            <div class="field m-0">
+              <div class="d-flex clone mt-3 educationRow">
+                <div class="field_dropdown w-16">
+                  <label for="date">Availiabile from</label>
+                  <input
+                    type="date"
+                    class="form-control w-100"
+                    placeholder="Please Select"
+                    required
+                  />
+                </div>
+
+                <div class="field_dropdown w-16">
+                  <label for="date ">Available To </label>
+                  <input
+                    type="date"
+                    class="form-control w-100"
+                    placeholder="Please Select"
+                    required
+                  />
+                </div>
+
+                <div class="w-16">
+                  <label for="salution "
+                    >institution (name of the institution)
+                  </label>
+                  <input type="text" class="form-control w-100" />
+                </div>
+
+                <div class="w-16">
+                  <label for="salution ">Education </label>
+                  <input type="text" class="form-control w-100" />
+                </div>
+
+                <div class="w-16">
+                  <label for="salution ">Specialization </label>
+                  <input type="text" class="form-control w-100" />
+                </div>
+
+                <div class="w-16">
+                  <label for="Action ">Action </label>
+                  <div class="d-flex">
+                    <span class="icon">&#9998;</span>
+                    <span class="icon" onclick="deleteRow(this, 'educationRow')"
+                      ><i class="ri-delete-bin-line"></i
+                    ></span>
+                  </div>
+                </div>
+              </div>
+
+              <button class="AddRow">
+                <span>Add another field</span>
+                <span><i class="ri-add-line"></i></span>
+              </button>
+            </div>
+
+            <div class="navigation_btns mt-4">
+              <button class="btn back">Back</button>
+              <button class="btn">Save</button>
+            </div>
+          </div>
+
+          <div class="input_mask d-none">
+            <div class="field m-0">
+              <div class="d-flex clone mt-3 educationRow">
+                <div class="field_dropdown w-16">
+                  <label for="date">Availiabile from</label>
+                  <input
+                    type="date"
+                    class="form-control w-100"
+                    placeholder="Please Select"
+                    required
+                  />
+                </div>
+
+                <div class="field_dropdown w-16">
+                  <label for="date ">Available To </label>
+                  <input
+                    type="date"
+                    class="form-control w-100"
+                    placeholder="Please Select"
+                    required
+                  />
+                </div>
+
+                <div class="w-16">
+                  <label for="salution "
+                    >institution (name of the institution)
+                  </label>
+                  <input type="text" class="form-control w-100" />
+                </div>
+
+                <div class="w-16">
+                  <label for="salution ">Education </label>
+                  <input type="text" class="form-control w-100" />
+                </div>
+
+                <div class="w-16">
+                  <label for="salution ">Specialization </label>
+                  <input type="text" class="form-control w-100" />
+                </div>
+
+                <div class="w-16">
+                  <label for="Action ">Action </label>
+                  <div class="d-flex">
+                    <span class="icon">&#9998;</span>
+                    <span class="icon" onclick="deleteRow(this, 'educationRow')"
+                      ><i class="ri-delete-bin-line"></i
+                    ></span>
+                  </div>
+                </div>
+              </div>
+
+              <button class="AddRow">
+                <span>Add another field</span>
+                <span><i class="ri-add-line"></i></span>
+              </button>
+            </div>
+
+            <div class="navigation_btns mt-4">
+              <button class="btn back">Back</button>
+              <button class="btn">Save</button>
+            </div>
+          </div>
+
+          <div class="input_mask d-none">
+            <div class="field m-0">
+              <div class="d-flex clone mt-3 educationRow">
+                <div class="field_dropdown w-16">
+                  <label for="date">Availiabile from</label>
+                  <input
+                    type="date"
+                    class="form-control w-100"
+                    placeholder="Please Select"
+                    required
+                  />
+                </div>
+
+                <div class="field_dropdown w-16">
+                  <label for="date ">Available To </label>
+                  <input
+                    type="date"
+                    class="form-control w-100"
+                    placeholder="Please Select"
+                    required
+                  />
+                </div>
+
+                <div class="w-16">
+                  <label for="salution "
+                    >institution (name of the institution)
+                  </label>
+                  <input type="text" class="form-control w-100" />
+                </div>
+
+                <div class="w-16">
+                  <label for="salution ">Education </label>
+                  <input type="text" class="form-control w-100" />
+                </div>
+
+                <div class="w-16">
+                  <label for="salution ">Specialization </label>
+                  <input type="text" class="form-control w-100" />
+                </div>
+
+                <div class="w-16">
+                  <label for="Action ">Action </label>
+                  <div class="d-flex">
+                    <span class="icon">&#9998;</span>
+                    <span class="icon" onclick="deleteRow(this, 'educationRow')"
+                      ><i class="ri-delete-bin-line"></i
+                    ></span>
+                  </div>
+                </div>
+              </div>
+
+              <button class="AddRow">
+                <span>Add another field</span>
+                <span><i class="ri-add-line"></i></span>
+              </button>
+            </div>
+
+            <div class="navigation_btns mt-4">
+              <button class="btn back">Back</button>
+              <button class="btn">Save</button>
+            </div>
+          </div>
+
+          <div class="input_mask d-none">
+            <div class="field m-0">
+              <div class="d-flex clone mt-3 educationRow">
+                <div class="field_dropdown w-16">
+                  <label for="date">Availiabile from</label>
+                  <input
+                    type="date"
+                    class="form-control w-100"
+                    placeholder="Please Select"
+                    required
+                  />
+                </div>
+
+                <div class="field_dropdown w-16">
+                  <label for="date ">Available To </label>
+                  <input
+                    type="date"
+                    class="form-control w-100"
+                    placeholder="Please Select"
+                    required
+                  />
+                </div>
+
+                <div class="w-16">
+                  <label for="salution "
+                    >institution (name of the institution)
+                  </label>
+                  <input type="text" class="form-control w-100" />
+                </div>
+
+                <div class="w-16">
+                  <label for="salution ">Education </label>
+                  <input type="text" class="form-control w-100" />
+                </div>
+
+                <div class="w-16">
+                  <label for="salution ">Specialization </label>
+                  <input type="text" class="form-control w-100" />
+                </div>
+
+                <div class="w-16">
+                  <label for="Action ">Action </label>
+                  <div class="d-flex">
+                    <span class="icon">&#9998;</span>
+                    <span class="icon" onclick="deleteRow(this, 'educationRow')"
+                      ><i class="ri-delete-bin-line"></i
+                    ></span>
+                  </div>
+                </div>
+              </div>
+
+              <button class="AddRow">
+                <span>Add another field</span>
+                <span><i class="ri-add-line"></i></span>
+              </button>
+            </div>
+
+            <div class="navigation_btns mt-4">
+              <button class="btn back">Back</button>
+              <button class="btn">Save</button>
+            </div>
+          </div>
+
+          <div class="input_mask d-none">
+            <div class="field m-0">
+              <div class="d-flex clone mt-3 educationRow">
+                <div class="field_dropdown w-16">
+                  <label for="date">Availiabile from</label>
+                  <input
+                    type="date"
+                    class="form-control w-100"
+                    placeholder="Please Select"
+                    required
+                  />
+                </div>
+
+                <div class="field_dropdown w-16">
+                  <label for="date ">Available To </label>
+                  <input
+                    type="date"
+                    class="form-control w-100"
+                    placeholder="Please Select"
+                    required
+                  />
+                </div>
+
+                <div class="w-16">
+                  <label for="salution "
+                    >institution (name of the institution)
+                  </label>
+                  <input type="text" class="form-control w-100" />
+                </div>
+
+                <div class="w-16">
+                  <label for="salution ">Education </label>
+                  <input type="text" class="form-control w-100" />
+                </div>
+
+                <div class="w-16">
+                  <label for="salution ">Specialization </label>
+                  <input type="text" class="form-control w-100" />
+                </div>
+
+                <div class="w-16">
+                  <label for="Action ">Action </label>
+                  <div class="d-flex">
+                    <span class="icon">&#9998;</span>
+                    <span class="icon" onclick="deleteRow(this, 'educationRow')"
+                      ><i class="ri-delete-bin-line"></i
+                    ></span>
+                  </div>
+                </div>
+              </div>
+
+              <button class="AddRow">
+                <span>Add another field</span>
+                <span><i class="ri-add-line"></i></span>
+              </button>
+            </div>
+
+            <div class="navigation_btns mt-4">
+              <button class="btn back">Back</button>
+              <button class="btn">Save</button>
+            </div>
+          </div>
+
+          <div class="input_mask d-none">
+            <div class="field m-0">
+              <div class="d-flex clone mt-3 educationRow">
+                <div class="field_dropdown w-16">
+                  <label for="date">Availiabile from</label>
+                  <input
+                    type="date"
+                    class="form-control w-100"
+                    placeholder="Please Select"
+                    required
+                  />
+                </div>
+
+                <div class="field_dropdown w-16">
+                  <label for="date ">Available To </label>
+                  <input
+                    type="date"
+                    class="form-control w-100"
+                    placeholder="Please Select"
+                    required
+                  />
+                </div>
+
+                <div class="w-16">
+                  <label for="salution "
+                    >institution (name of the institution)
+                  </label>
+                  <input type="text" class="form-control w-100" />
+                </div>
+
+                <div class="w-16">
+                  <label for="salution ">Education </label>
+                  <input type="text" class="form-control w-100" />
+                </div>
+
+                <div class="w-16">
+                  <label for="salution ">Specialization </label>
+                  <input type="text" class="form-control w-100" />
+                </div>
+
+                <div class="w-16">
+                  <label for="Action ">Action </label>
+                  <div class="d-flex">
+                    <span class="icon">&#9998;</span>
+                    <span class="icon" onclick="deleteRow(this, 'educationRow')"
+                      ><i class="ri-delete-bin-line"></i
+                    ></span>
+                  </div>
+                </div>
+              </div>
+
+              <button class="AddRow">
+                <span>Add another field</span>
+                <span><i class="ri-add-line"></i></span>
+              </button>
+            </div>
+
+            <div class="navigation_btns mt-4">
+              <button class="btn back">Back</button>
+              <button class="btn">Save</button>
+            </div>
+          </div>
+
+          <div class="input_mask d-none">
+            <div class="field m-0">
+              <div class="d-flex clone mt-3 educationRow">
+                <div class="field_dropdown w-16">
+                  <label for="date">Availiabile from</label>
+                  <input
+                    type="date"
+                    class="form-control w-100"
+                    placeholder="Please Select"
+                    required
+                  />
+                </div>
+
+                <div class="field_dropdown w-16">
+                  <label for="date ">Available To </label>
+                  <input
+                    type="date"
+                    class="form-control w-100"
+                    placeholder="Please Select"
+                    required
+                  />
+                </div>
+
+                <div class="w-16">
+                  <label for="salution "
+                    >institution (name of the institution)
+                  </label>
+                  <input type="text" class="form-control w-100" />
+                </div>
+
+                <div class="w-16">
+                  <label for="salution ">Education </label>
+                  <input type="text" class="form-control w-100" />
+                </div>
+
+                <div class="w-16">
+                  <label for="salution ">Specialization </label>
+                  <input type="text" class="form-control w-100" />
+                </div>
+
+                <div class="w-16">
+                  <label for="Action ">Action </label>
+                  <div class="d-flex">
+                    <span class="icon">&#9998;</span>
+                    <span class="icon" onclick="deleteRow(this, 'educationRow')"
+                      ><i class="ri-delete-bin-line"></i
+                    ></span>
                   </div>
                 </div>
               </div>
@@ -1369,7 +1812,7 @@
           LEVEL OF EXPERIENCE:
         </p>
 
-        <div class="field m-0">
+        <div class="field m-0 proessionalFocus">
           <div class="d-flex clone mt-3">
             <div class="field_dropdown w-33">
               <label for="date"><b>Professional focus</b> </label>
@@ -1426,7 +1869,11 @@
             <div>
               <label for="Action ">Action </label>
               <div class="d-flex">
-                <span class="icon"><i class="ri-delete-bin-line"></i></span>
+                <span
+                  class="icon dltIcon d-none"
+                  onclick="deleteRow(this, 'proessionalFocus')"
+                  ><i class="ri-delete-bin-line d-none"></i
+                ></span>
               </div>
             </div>
           </div>
@@ -1497,7 +1944,9 @@
             <div>
               <label for="Action ">Action </label>
               <div class="d-flex">
-                <span class="icon"><i class="ri-delete-bin-line"></i></span>
+                <span class="icon d-none dltIcon" onclick="deleteRow(this)"
+                  ><i class="ri-delete-bin-line d-none"></i
+                ></span>
               </div>
             </div>
           </div>
@@ -2079,14 +2528,23 @@
       setDropdownData(yearAvailiblity, yearAvailiblityArr);
 
       // For the education menu toggling;
-      const menu = document.querySelector("#educationDiv  .menu");
+      const educationDiv = document.querySelector("#educationDiv");
+      const menu = educationDiv.querySelector(".menu");
+      const inputMaskEdu = educationDiv.querySelectorAll(".input_mask");
       const ps = menu.querySelectorAll("p");
       let prev = ps[0];
-      ps.forEach((itm) => {
+
+      let prevInputMask = inputMaskEdu[0];
+      ps.forEach((itm, idx) => {
         itm.addEventListener("click", function () {
           prev.classList.remove("active");
           itm.classList.toggle("active");
           prev = itm;
+
+          prevInputMask.classList.add("d-none");
+          inputMaskEdu[idx].classList.remove("d-none");
+
+          prevInputMask = inputMaskEdu[idx];
         });
       });
 
@@ -2115,6 +2573,7 @@
         "budgetResponsiblityDropdown"
       );
       const personalResponsiblityArr = [
+        ["------------------"],
         ["for more than 1000 employee"],
         ["Up to 1000 employees"],
         ["Up to 500 employees"],
@@ -2124,6 +2583,7 @@
       ];
 
       const revenueResponsiblityData = [
+        ["------------------"],
         ["for more than 1 Mrd €"],
         ["Up to 1 Mrd €"],
         ["up to 500 Mio €"],
@@ -2133,6 +2593,7 @@
       ];
 
       const lastYearSalaryArr = [
+        ["------------------"],
         ["200.000 – 250.000 €"],
         ["180.000 – 200.000 €"],
         ["150.000 – 180.000€"],
@@ -2283,8 +2744,8 @@
 
       // Add a row button to the education;
       const addBtns = document.querySelectorAll(".AddRow");
-      addBtns.forEach((btn) => {
-        addRow(btn);
+      addBtns.forEach((btn, idx) => {
+        addRow(btn, ++idx);
       });
 
       // ######################## Openner toggling;

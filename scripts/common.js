@@ -145,19 +145,36 @@ function setDropdownData(dropdownMenuList, data) {
 }
 
 // Add a new row;
-function addRow(addBtn) {
+function addRow(addBtn, idx) {
   addBtn.addEventListener("click", function () {
     // Find the parent Node;
     const parentNode = addBtn.parentElement;
     // clone node that has to be copied;
     const clonedRow = parentNode.querySelector(".clone").cloneNode(true);
-
+    clonedRow.querySelectorAll("input").forEach((itm) => {
+      itm.value = "";
+    });
+    const dltIconElem = clonedRow.querySelector(".dltIcon");
+    if (dltIconElem) {
+      const rand = generateRandomClassName();
+      clonedRow.classList.add(rand);
+      dltIconElem.setAttribute("idx", rand);
+      dltIconElem.classList.remove("d-none");
+      dltIconElem.querySelector("i").classList.remove("d-none");
+    }
     // Append the clone Node in the parent element;
     parentNode.appendChild(clonedRow);
 
     parentNode.appendChild(addBtn);
     dropDownFunc();
   });
+}
+
+function deleteRow(addBtn, className = "") {
+  const idx = addBtn.getAttribute("idx");
+  const elem = document.querySelector(`.${idx}`);
+  elem.remove();
+  // dropDownFunc();
 }
 
 // Return the list of all languages;
@@ -329,4 +346,17 @@ function setMultipleDropdownData(dropdowns, dropdownArr) {
   dropdowns.forEach((dropdown) => {
     setDropdownData(dropdown, dropdownArr);
   });
+}
+
+function generateRandomClassName() {
+  // Generate random characters for class name
+  const characters =
+    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  let className = "";
+  for (let i = 0; i < 10; i++) {
+    className += characters.charAt(
+      Math.floor(Math.random() * characters.length)
+    );
+  }
+  return `random-class-${className}`;
 }

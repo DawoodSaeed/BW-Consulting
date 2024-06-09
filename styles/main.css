@@ -491,11 +491,16 @@ body {
   z-index: 1000;
   padding: 10px;
   /* border: 1px solid var(--border-color); */
-  /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   /* max-width: 250px; */
   width: 100%;
   left: -1px;
   min-width: 300px;
+}
+
+
+.dropdown > .dropdown-options > .hover:not(:last-of-type){
+  border-bottom: 1px solid var(--border-color);
 }
 
 .dropdown > .registration_dropdown {
@@ -809,8 +814,8 @@ main {
 .field label {
   display: block;
   font-family: Quicksand;
-  margin-bottom: 20px;
-  height: 40px;
+  margin-bottom: 15px;
+  height: 30px;
 }
 
 .field .form-control {
@@ -842,8 +847,9 @@ main {
   opacity: 0;
   transition: all 0.4s ease;
   z-index: 11;
-  height: 300px;
-  overflow-y: scroll;
+  height: max-content;
+  max-height: 300px;
+  overflow-y: auto;
 }
 
 .field .field_dropdown--menuActive {
@@ -870,8 +876,8 @@ main {
 }
 
 .field .requiredField {
-  font-size: 32px;
-  color: rgb(153, 51, 73);
+  font-size: 25px;
+  color: #000;
 }
 
 .field .row {
