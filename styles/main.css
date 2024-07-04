@@ -632,6 +632,7 @@ body {
 .open {
   display: block !important;
   animation: opacityAnimation 0.3s ease-in;
+  opacity: 1 !important;
 }
 
 .open_flex {

@@ -262,10 +262,10 @@ body {
 
 /*  custom range  */
 
-.container {
+.gehaltslevel .container {
   position: relative;
   width: 100%;
-  height: 100px;
+  height: 40px;
 }
 
 input[type="range"] {
@@ -373,4 +373,10 @@ input[type="range"]:active::-webkit-slider-thumb {
   bottom: 5%;
   left: 50%;
   transform: translateX(-50%);
+}
+
+
+.gehaltslevel .btn{
+  width: 100%;
+  color: #000;
 }
